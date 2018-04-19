@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "小优助理",
+  "usingComponents": {
+    "easy-modal": "/component/easyModal/easy/easyModal",
+    "base-modal": "/component/easyModal/base/baseModal",
+    "weatherModal":"/component/weatherModal/weather"
+  }
+}

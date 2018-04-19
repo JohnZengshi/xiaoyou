@@ -1,0 +1,34 @@
+<view class="section">
+  <view class='content'>
+    <image class='bgc' src='../../../images/basicsPacket/upper_bg.png'></image>
+    <view class='top' catchtap='_entryActivityPage'>红包记录</view>
+    <image class='Icon' src='../../../images/basicsPacket/details_avatar.png'></image>
+    <view class='main'>
+      <text wx:if="{{basicsPacket.type == 'newcomer'}}">小优给你发一个新手红包</text>
+      <text wx:if="{{basicsPacket.type == 'surprise'}}">小优给你发一个惊喜红包</text>
+      <text>{{basicsPacket.content[0]}}</text>
+      <view class='money'>
+        <text>￥</text>
+        <text>{{basicsPacket.cash}}</text>
+      </view>
+      <text class='withdraw' catchtap='_entryWallet'>已存入钱包，可立即提现</text>
+    </view>
+  </view>
+  <view class='packetList'>
+    <view class='line'></view>
+    <view class='top'>
+      <view class='todayPacket'>今日领取红包：{{DailyPacket.count}}个</view>
+      <view class='line'></view>
+      <view class='packetAddUp'>今日累计收入：￥{{DailyPacket.allMomey}}</view>
+    </view>
+    <view class='list'>
+      <block wx:for="{{DailyPacket.Packet}}" wx:key="key">
+        <view class='packet'>
+          <view class='type'>{{item.type}}</view>
+          <view class='ctime'>{{item.ctime}}</view>
+          <view class='money'>￥{{item.cash}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

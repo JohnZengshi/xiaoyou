@@ -1,0 +1,196 @@
+/* pages/rebatePage/rebatePacket.wxss */
+
+page,
+.section {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f6;
+}
+
+/* 红包列表 */
+
+.section {
+  .top {
+    height: 184rpx;
+    box-sizing: border-box;
+    padding: 0 100rpx;
+    background-image: linear-gradient(to right, #ff5a4e, #fb7e57);
+    .withdrawDeposit,
+    .accumulatedIncome {
+      height: 100%;
+      text-align: center;
+      >text {
+        &:first-of-type {
+          font-size: 26rpx;
+          color: #FFF;
+          margin-top: 32rpx;
+          line-height: 26rpx;
+        }
+        &:last-of-type {
+          font-size: 60rpx;
+          line-height: 60rpx;
+          color: #FFF;
+          margin-top: 20rpx;
+          font-weight: 600;
+        }
+      }
+    }
+    .line {
+      width: 2rpx;
+      height: 52rpx;
+      background-color: #FFF;
+      opacity: .5;
+      margin-top: 80rpx;
+    }
+  }
+  .packetList {
+    background-color: #ffffff;
+    .tab {
+      height: 72rpx;
+      margin: 0 32rpx;
+      >view {
+        color: #888;
+        font-size: 28rpx;
+        line-height: 72rpx;
+        height: 100%;
+        &.active {
+          color: #FF5548;
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 5rpx;
+            bottom: 0rpx;
+            background-color: #FF5548;
+          }
+        }
+      }
+    }
+    .tip {
+      background-color: #F7F7F7;
+      padding: 14rpx 28rpx;
+      font-size: 24rpx;
+      color: #888;
+      line-height: 36rpx;
+      box-sizing: border-box;
+    }
+    .packet {
+      width: 100%; // height: 160rpx;
+      border-bottom: 1rpx solid #f5f5f6;
+      padding: 32rpx 28rpx;
+      box-sizing: border-box; // overflow: hidden;
+      position: relative; // .describe{
+      //   font-size: 30rpx;
+      //   color: #333;
+      //   margin-top: 30rpx;
+      //   line-height: 30rpx;
+      // }
+      .orderid {
+        font-size: 26rpx;
+        color: #333;
+        // margin-top: 32rpx;
+        line-height: 26rpx;
+      }
+      .title {
+        width: 438rpx;
+        font-size: 26rpx;
+        line-height: 26rpx;
+        color: #333;
+        margin-top: 12rpx;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .from{
+        font-size: 24rpx;
+        color: #A5A5A5;
+        line-height: 24rpx;
+        margin-top: 24rpx;
+      }
+      .ctime {
+        font-size: 24rpx;
+        color: #A5A5A5;
+        margin-top: 12rpx;
+        line-height: 24rpx;
+      }
+      .money {
+        position: absolute;
+        right: 28rpx;
+        top: 32rpx;
+        font-size: 36rpx;
+        line-height: 36rpx;
+        color: #333;
+      } // .moneytypeBtn{
+      //   width: 96rpx;
+      //   height: 40rpx;
+      //   position: absolute;
+      //   right: 30rpx;
+      //   bottom: 30rpx;
+      //   font-size: 22rpx;
+      //   color: #fff;
+      //   border-radius: 20rpx;
+      //   background-color: #FF756A;
+      //   line-height: 40rpx;
+      //   text-align: center;
+      // }
+      // .waitbtn{
+      //   background-color: #3d9df5;
+      // }
+    }
+  }
+} // flex兼容写法
+// 定义布局为盒模型
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+// 盒模型垂直布局
+.flex-v {
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.flex-r {
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+// 子元素占据剩余的空间
+.flex-1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+// 子元素垂直居中
+.flex-align-center {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+// 子元素水平居中
+.flex-pack-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+// 子元素两端对齐
+.flex-pack-justify {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}

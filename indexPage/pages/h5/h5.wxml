@@ -1,0 +1,6 @@
+<!--pages/h5/h5.wxml-->
+<view class="section">
+  <web-view src="{{url}}">
+  </web-view>
+
+</view>

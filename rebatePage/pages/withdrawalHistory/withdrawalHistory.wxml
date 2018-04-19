@@ -1,0 +1,15 @@
+<view class='section'>
+  <view class='top flex flex-v flex-align-center'>
+      <text>累计提现</text>
+      <text>￥{{accumulatedIncome}}</text>
+  </view>
+  <view class='packetList'>
+    <block wx:for="{{rebatePacket}}" wx:key="key">
+      <view class='packet'>
+        <view class='describe'>{{item.describe}}</view>
+        <view class='ctime'>{{item.ctime}}</view>
+        <view class='money'>￥{{item.money}}</view>
+      </view>
+    </block>
+  </view>
+</view>

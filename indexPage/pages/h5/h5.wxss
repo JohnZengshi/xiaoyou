@@ -1,0 +1,16 @@
+/* pages/h5/h5.wxss */
+page,section{
+  width: 100%;
+  height: 100%;
+}
+
+.backIndex{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background-color: red;
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 9999;
+}

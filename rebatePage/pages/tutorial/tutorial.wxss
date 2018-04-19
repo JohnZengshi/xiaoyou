@@ -1,0 +1,32 @@
+page, .section {
+  width: 100%;
+  height: 2883rpx;
+  background-color: rgb(250, 81, 81);
+  overflow-y: scroll;
+}
+
+.section image {
+  width: 100%;
+  height: 2763rpx;
+}
+
+.section .bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 123rpx;
+  background-color: #feb449;
+  font-size: 27rpx;
+  padding: 16rpx 24rpx;
+  box-sizing: border-box;
+}
+
+.section .bottom text{
+  line-height: 46rpx;
+  color: #fff;
+
+}
+
+.section .bottom text:nth-of-type(2){
+  color: #A14500;
+}

@@ -1,0 +1,1245 @@
+page {
+    height: 100%;
+    overflow: hidden;
+    background-color: #f5f5f6;
+  }
+  
+  .tiper {
+    width: 100%;
+    height: 600rpx;
+    position: fixed;
+    top: 0;
+    background-color: red;
+    z-index: -100000;
+  }
+  
+  /* 首页进入部分 */
+  
+  .section {
+    height: 100%;
+    overflow: hidden;
+    padding: 0 28rpx;
+    background-color: #f5f5f6;
+    border-top: 1px solid #ddd;
+    box-sizing: border-box;
+  }
+  
+  .sectionBox {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .BOX {
+    /* transform: translateY(195rpx);   *//* opacity: 0; */
+  }
+  
+  #to3 {
+    /* height:300rpx; *//* margin-bottom:190rpx; */
+  }
+  
+  /* .firstWordBOX{
+    margin-top: 265rpx;
+  } */
+  
+  .BOX:nth-of-type(1) {
+    margin-top: 360rpx;
+  }
+  
+  .BOX:nth-of-type(2), .BOX:nth-of-type(3) {
+    /* transform: translateY(0rpx) !important;  */
+    opacity: 1;
+  }
+  
+  .secondWord {
+    width: 524rpx;
+  }
+  
+  /* 机器人回复 */
+  
+  .aiTextBox, .firstaiTextBox {
+    position: relative;
+    width: 100%;
+    float: left;
+    margin: 16rpx 0;
+  }
+  
+  .aiTextBox>view, .firstaiTextBox>view {
+    max-width: 78.8%;
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+    padding: 24rpx 32rpx;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    background-color: white;
+    border-radius: 20rpx 20rpx 20rpx 6rpx;
+    display: inline-block;
+    /* margin: 16rpx 0; */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* .BOX:nth-of-type(1)>view {
+    margin-top: 48rpx;
+  } */
+  
+  /* 按钮样式 */
+  
+  button::after {
+    border: none;
+  }
+  
+  .btnTextBox {
+    width: 100%;
+    float: left;
+    margin: 12rpx 0 16rpx 0;
+  }
+  
+  .btnTextBox .btn {
+    float: left;
+  }
+  
+  .btnTextBox .btn .btn-area {
+    float: left;
+    margin-right: 16rpx;
+    /* width: 100rpx; */
+    height: 60rpx;
+    color: #ff756a;
+    background-color: white;
+    border-style: none;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 60rpx;
+    border-radius: 20rpx;
+    padding: 0 24rpx;
+    /* border: 1px solid #F2A229; *//* box-shadow: 2px 2px 10px #888888 ; */
+  }
+  
+  .btnOptionTextBox {
+    width: 100%;
+    float: left;
+    /* margin-bottom: 28rpx; */
+    margin: 12rpx 0;
+  }
+  
+  .constellationOption view, .hotCityOption view, .option view {
+    padding: 0 28rpx;
+    font-size: 28rpx;
+    height: 64rpx;
+    text-align: center;
+    line-height: 64rpx;
+    margin-right: 12rpx;
+    background-color: white;
+    display: inline-block;
+    border-radius: 50rpx;
+    /* color: #ff756a; */
+  }
+  
+  .constellationOption view {
+    color: #ff756a;
+  }
+  
+  /* 换一换按钮 */
+  
+  /* .btnOptionTextBox .swicthOption .btn .btn-area */
+  
+  /*选项 */
+  
+  .btnOptionTextBox {
+    width: 100%;
+    height: 66rpx;
+  }
+  
+  .btnOptionTextBox .constellationOption {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .btnOptionTextBox .constellationOption .btn {
+    display: inline-block;
+    padding: 0;
+    margin-right: 16rpx;
+  }
+  
+  .btnOptionTextBox .constellationOption .btn .btn-area {
+    margin-right: 0;
+    border-radius: 20rpx;
+  }
+  
+  .btnOptionTextBox .constellationOption .btn .btn-area text {
+    line-height: 60rpx;
+  }
+  
+  /* 热门城市选项 */
+  
+  .btnOptionTextBox .hotCityOption {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+  }
+  
+  .btnOptionTextBox .hotCityOption .btn {
+    display: inline-block;
+    padding: 0;
+    margin-right: 16rpx;
+  }
+  
+  .btnOptionTextBox .hotCityOption .btn .btn-area {
+    margin-right: 0;
+    border-radius: 20rpx;
+  }
+  
+  .btnOptionTextBox .hotCityOption .btn .btn-area text {
+    line-height: 60rpx;
+    color: #333;
+  }
+  
+  /* 底部部分 */
+  
+  .bottomPack {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+  /* 输入框 */
+  
+  .search {
+    /* position: fixed; *//* position: absolute; *//* bottom: 0; *//* left: 0; */
+    position: relative;
+    width: 100%;
+    height: 100rpx;
+    z-index: 1;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .search input {
+    width: 564rpx;
+    height: 72rpx;
+    font-size: 32rpx;
+    color: #333;
+    border-radius: 8rpx;
+    border-width: 1;
+    border: 1px solid #e6e6e6;
+    box-sizing: border-box;
+    margin: 14rpx 26rpx 14rpx 28rpx;
+    padding-left: 16rpx;
+    /* text-indent: 16rpx; */
+  }
+  
+  .search .btn-area {
+    /* position: absolute; *//* right: 28rpx; *//* top: 15rpx; */
+    width: 104rpx;
+    height: 72rpx;
+    font-size: 28rpx;
+    color: #fff;
+    text-align: center; 
+    /* text-indent:24rpx; */
+    border-radius: 12rpx;
+    line-height: 72rpx;
+    z-index: 2;
+    background-color: #ff756a;
+    margin: 14rpx 28rpx 14rpx 0;
+    padding: 0;
+  }
+  
+  .constellationBox {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    display: flex;
+  }
+  
+  .optionBox {
+    height: 75rpx;
+    width: 100%;
+  }
+  
+  .option {
+    position: absolute; /* left: 0;  *//* bottom: 105rpx;     */
+    z-index: 1;
+    overflow: hidden;
+    /* margin-bottom: 10rpx; *//* height: 100%; */
+    white-space: nowrap;
+    /* display: flex; */
+  }
+  
+  .option view:first-of-type {
+    margin-left: 28rpx;
+  }
+  
+  .option view:nth-of-type(3) {
+    /* border: 1px solid #ff8c83; */
+  }
+  
+  .Wallet {
+    /* position: fixed; *//* bottom: 210rpx; *//* right: 20rpx; */
+    height: 108rpx;
+    /* width: 100%; */
+    margin: 0 8rpx 54rpx 0;
+    border-radius: 50%;
+  }
+  
+  .Wallet image {
+    width: 108rpx;
+    height: 108rpx;
+    float: right;
+  }
+  
+  /* .option view:first-of-type, .option view:nth-of-type(2) {
+    color: #555;
+  } */
+  
+  .CarveUpCash, .wordRedPacket {
+    border: 1px solid #ff756a;
+  }
+  
+  .CarveUpCash, .findCoupon, .findGoods, .wordRedPacket {
+    color: #ff756a;
+  }
+  
+  /* 用户回复 */
+  
+  .userTextBox {
+    position: relative;
+    width: 100%;
+    float: right;
+    margin: 16rpx 0;
+  }
+  
+  .userTextBox>view {
+    max-width: 67.8%;
+    position: relative;
+    float: right;
+    padding: 24rpx 32rpx;
+    font-size: 28rpx;
+    background-color: #ff756a;
+    border-radius: 20rpx 20rpx 6rpx 20rpx;
+    display: inline-block;
+    /* margin: 28rpx 0; */
+    color: #f5f5f6;
+    white-space: wrap;
+  }
+  
+  .userTextBox>view:after {
+    /* content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 12px;
+    right: -5px;
+    transform: rotate(225deg);
+    border: 1px #ccc;
+    background-color: #f2a229; */
+  }
+  
+  /* 天气卡片 */
+  
+  .weatherTextBox {
+    position: relative;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: white;
+    border-radius: 20rpx;
+    display: inline-block;
+    width: 694rpx;
+    margin: 16rpx 0;
+  }
+  
+  .weatherTextBox .content {
+    border-radius: 20rpx 20rpx 0 0;
+    height: 260rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 8rpx;
+    padding: 0 32rpx 32rpx 32rpx;
+  }
+  
+  /* 渐变背景分类 */
+  
+  .cloudybackground, .sunnybackground {
+    background: -webkit-linear-gradient(left, #0c9afd, #23d5f5);
+  }
+  
+  .fogbackground, hazebackground {
+    background: -webkit-linear-gradient(left, #4a4460, #69698d);
+  }
+  
+  .overcastbackground {
+    background: -webkit-linear-gradient(left, #879cb9, #adbbcc);
+  }
+  
+  .rainybackground, .snowybackground {
+    background: -webkit-linear-gradient(left, #0d72d0, #2f87f4);
+  }
+  
+  .weatherTextBox .content .top {
+    width: 100%;
+    height: 188rpx;
+  }
+  
+  .weatherTextBox .content .top .left {
+    float: left;
+    margin-top: 32rpx;
+  }
+  
+  .weatherTextBox .content .top .rigth {
+    width: 140rpx;
+    float: right;
+    margin-top: 20rpx;
+  }
+  
+  .weatherTextBox .content .top .left>view:first-of-type {
+    line-height: 28px;
+  }
+  
+  .weatherTextBox .content .top .left>view:last-of-type {
+    margin-top: 30rpx;
+  }
+  
+  .weatherTextBox .content .top .left>view:first-of-type>text:first-of-type {
+    font-size: 68rpx;
+    color: #fff;
+    margin-top: 10rpx;
+  }
+  
+  .weatherTextBox .content .top .left>view:first-of-type>text:last-of-type {
+    font-size: 28rpx;
+    color: #fff;
+  }
+  
+  .weatherTextBox .content .top .left>view:last-of-type>text:first-of-type {
+    font-size: 28rpx;
+    color: #fff;
+    margin-right: 20rpx;
+  }
+  
+  .weatherTextBox .content .top .left>view:last-of-type>text:last-of-type {
+    font-size: 28rpx;
+    color: #fff;
+  }
+  
+  .weatherTextBox .content .bottom {
+    /* margin: 20rpx 32rpx 32rpx 32rpx; */
+  }
+  
+  .weatherTextBox .content .bottom text {
+    font-size: 24rpx;
+    color: #fff;
+  }
+  
+  .weatherTextBox>.bottom {
+    height: 72rpx;
+    padding: 0 32rpx 0 32rpx;
+    line-height: 72rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .weatherTextBox>.bottom .day {
+    /* margin-right: 172rpx; */
+  }
+  
+  .weatherTextBox>.bottom .day {
+    font-size: 30rpx;
+    color: #555;
+    width: 33%;
+  }
+  
+  .weatherTextBox>.bottom .temperature {
+    width: 20%;
+    text-align: left;
+  }
+  
+  .weatherTextBox>.bottom .weather text {
+    font-size: 30rpx;
+    color: #555;
+  }
+  
+  .weatherTextBox>.bottom .weather {
+    width: 47%;
+  }
+  
+  .weatherTextBox>.bottom .weather text {
+    text-align: left;
+  }
+  
+  .weatherTextBox>.bottom .temperature {
+    text-align: left;
+  }
+  
+  .weatherTextBox>.bottom .weather {
+    /* position: absolute;
+    text-align: center;
+    left: 50%;
+    margin-left: -70rpx; */
+  }
+  
+  .weatherTextBox>.bottom .weather image {
+    width: 56rpx;
+    margin-right: 20rpx;
+    margin-bottom: 15rpx;
+    vertical-align: middle;
+  }
+  
+  /* 星座卡片 */
+  
+  .constellationTextBox {
+    position: relative;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: white;
+    border-radius: 20rpx;
+    display: inline-block;
+    width: 694rpx;
+    margin: 16rpx 0;
+  }
+  
+  .constellationTextBox .comment {
+    border-radius: 20rpx 20rpx 0 0;
+    /* height: 260rpx; */
+    background: -webkit-linear-gradient(left, #1f1c14, #5b224b);
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .constellationTextBox .comment .left {
+    width: 494rpx;
+  }
+  
+  .constellationTextBox .comment .left .currentXZ {
+    margin: 32rpx 0 12rpx 32rpx;
+    display: flex;
+    flex-direction: row;
+    line-height: 81rpx;
+    color: #fff;
+  }
+  
+  .constellationTextBox .comment .left .currentXZ text {
+    font-size: 40rpx;
+    margin-left: 20rpx;
+    line-height: 55px;
+  }
+  
+  .constellationTextBox .comment .left .XZbox {
+    /* padding:0 10rpx 20rpx 32rpx; */
+    margin-bottom: 20rpx;
+    display: flex;
+    flex-direction: row;
+    /* height: 100rpx; */
+  }
+  
+  .constellationTextBox .comment .left .XZbox view {
+    height: 100rpx;
+    width: 152rpx;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .constellationTextBox .comment .left .XZbox view text:first-of-type {
+    font-size: 24rpx;
+    color: #aaa8b1;
+  }
+  
+  .constellationTextBox .comment .left .XZbox view text:last-of-type {
+    font-size: 24rpx;
+    color: #fff;
+    margin-top: 16rpx;
+  }
+  
+  .constellationTextBox .comment .left .XZbox view:nth-of-type(2) {
+  }
+  
+  .constellationTextBox .comment .left .XZbox view:nth-of-type(1),
+  .constellationTextBox .comment .left .XZbox view:nth-of-type(3) {
+  }
+  
+  .constellationTextBox .comment .rigth {
+    width: 200rpx;
+    border-left: 1px solid rgba(112, 69, 107, 0.5);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around */
+  }
+  
+  .constellationTextBox .comment .rigth text:first-of-type {
+    font-size: 56rpx;
+    color: #fff;
+    font-weight: 800;
+    margin-top: 65rpx;
+  }
+  
+  .constellationTextBox .comment .rigth text:last-of-type {
+    font-size: 24rpx;
+    color: #aaa8b1;
+    margin-top: 24px;
+  }
+  
+  .constellationTextBox .bottomBox {
+    padding: 32rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .constellationTextBox .bottomBox view:first-of-type {
+    font-size: 26rpx;
+    color: #5a214a;
+    font-weight: 600;
+    margin-bottom: 15rpx;
+  }
+  
+  .constellationTextBox .bottomBox view:last-of-type {
+    font-size: 24rpx;
+    color: #555;
+  }
+  
+  /* 找好物 */
+  
+  .goodsTextBox {
+    position: relative;
+    background-color: white;
+    border-radius: 20rpx;
+    display: inline-block;
+    margin: 16rpx 0;
+    /* margin-bottom: 52rpx; */
+    padding: 0 10px 0 10px;
+  }
+  
+  .goodsTextBox .comment {
+    border-bottom: 1px solid #ddd;
+    height: 180rpx;
+    padding: 4rpx 0;
+  }
+  
+  .goodsTextBox .comment:last-of-type {
+    border-bottom: none;
+  }
+  
+  .goodsTextBox .comment>view {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* height: 100%; */
+    padding: 20rpx;
+  }
+  
+  .goodsTextBox .comment>view:first-of-type {
+    /* padding: 10px 0 10px 0; */
+  }
+  
+  .goodsTextBox .comment:last-of-type>view {
+    border-bottom: none;
+  }
+  
+  .goodsTextBox .comment .findPic {
+    height: 140rpx;
+    width: 140rpx;
+    border-radius: 8rpx;
+  }
+  
+  .goodsTextBox .comment .lookPic {
+    width: 200rpx;
+    height: 140rpx;
+  }
+  
+  .goodsTextBox .comment .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0rpx 0 0rpx 16rpx;
+  }
+  
+  .goodsTextBox .comment .content>text:first-of-type {
+    -webkit-line-clamp: 2;
+    font-size: 26rpx;
+    color: #555 !important;
+  }
+  
+  .goodsTextBox .comment .content view {
+    display: flex;
+    justify-content: flex-start;
+    color: #f66;
+    margin-bottom: -10rpx;
+  }
+  
+  .goodsTextBox .comment .content view text {
+    /* margin: 0 5px; */
+  }
+  
+  .goodsTextBox .comment .content view text:first-of-type {
+    font-size: 26rpx;
+    color: #f66;
+    margin-right: 12rpx;
+    margin-top: 0;
+  }
+  
+  .goodsTextBox .comment .content view text:nth-of-type(2) {
+    font-weight: 600;
+    color: #f66;
+    font-size: 30rpx;
+    margin-right: 32rpx;
+  }
+  
+  .goodsTextBox .comment .content view text:last-of-type {
+    font-size: 28rpx;
+    color: #afafaf;
+    text-decoration: line-through;
+  }
+  
+  .goodsTextBox .comment .content text {
+    display: -webkit-box;
+    line-height: 40rpx;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .goodsTextBox button {
+    position: absolute;
+    bottom: -29px;
+    left: -18px;
+    list-style: none;
+    border: none;
+    background-color: transparent;
+    color: #f2a229;
+  }
+  
+  .goodsTextBox button::after {
+    border: none;
+  }
+  
+  .goodsTextBox .comment .content text:first-of-type {
+    /* white-space: nowrap;  */
+    -webkit-line-clamp: 1;
+    font-size: 30rpx;
+    color: #333;
+    margin-top: -5rpx;
+  }
+  
+  .goodsTextBox .comment .content text:last-of-type {
+    -webkit-line-clamp: 2;
+    font-size: 26rpx;
+    color: #999;
+  }
+  
+  .goodsTextBox .comment .content text {
+    display: -webkit-box;
+    line-height: 40rpx;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* 优惠卷 */
+  
+  .couponTextBox {
+    position: relative;
+    display: inline-block;
+    margin: 12rpx 0;
+    width: 694rpx;
+  }
+  
+  .couponTextBox>view {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .botn_money_coupon {
+    height: 252rpx;
+  }
+  
+  .coupon_no_money {
+    height: 186rpx;
+  }
+  
+  .money_no_coupon {
+    height: 296rpx;
+  }
+  
+  .couponTextBox .background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .couponTextBox .comment {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .couponTextBox .comment .left {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 531rpx;
+    display: flex;
+    flex-direction: row;
+    padding: 21rpx;
+    padding-right: 16rpx;
+    box-sizing: border-box;
+  }
+  
+  .couponTextBox .comment .money_no_coupon_Left {
+    width: 100%;
+  }
+  
+  .couponTextBox .comment .left .pic {
+    width: 140rpx;
+    height: 140rpx;
+    z-index: 2;
+  }
+  
+  .couponTextBox .comment .left .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 370rpx;
+    height: 163rpx;
+    z-index: 2;
+    padding: 0 32rpx 22rpx 16rpx;
+    box-sizing: border-box;
+  }
+  
+  .couponTextBox .comment .left .money_no_coupon {
+    width: 533rpx;
+  }
+  
+  .couponTextBox .comment .right {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 163rpx;
+  }
+  
+  .couponTextBox .comment .right>text {
+    position: absolute;
+    top: 75rpx;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    font-weight: 800;
+  }
+  
+  .couponTextBox .comment .bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* display: flex;
+    flex-direction: row; */
+    font-size: 26rpx;
+    padding-left: 21rpx;
+    box-sizing: border-box;
+  }
+  
+  .couponTextBox .comment .botn_money_coupon {
+    line-height: 68rpx;
+    height: 68rpx;
+  }
+  
+  .couponTextBox .comment .money_no_coupon,
+  .couponTextBox .comment .coupon_no_money {
+    height: 112rpx;
+  }
+  
+  .couponTextBox .comment>.money_no_coupon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .couponTextBox .comment .money_no_coupon image,
+  .couponTextBox .comment .coupon_no_money image {
+    width: 144rpx;
+    height: 92rpx;
+    margin: auto 0;
+  }
+  
+  .couponTextBox .comment .money_no_coupon .content {
+    line-height: 46rpx;
+    margin-left: 10rpx;
+  }
+  
+  .couponTextBox .comment .coupon_no_money .content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 11rpx;
+  }
+  
+  .couponTextBox .comment .coupon_no_money .content text {
+    line-height: 46rpx;
+  }
+  
+  .couponTextBox .comment .coupon_no_money .content view:nth-of-type(2) text:nth-of-type(2) {
+    color: #f66;
+    font-weight: 600;
+    margin: 0 8rpx;
+  }
+  
+  .couponTextBox .comment .money_no_coupon .content view:nth-of-type(2) text:nth-of-type(2) {
+    color: #f66;
+    font-weight: 600;
+    margin: 0 8rpx;
+  }
+  
+  .couponTextBox .comment .botn_money_coupon text:nth-of-type(2) {
+    color: #f66;
+    font-weight: 600;
+    margin: 0 8rpx;
+  }
+  
+  .couponTextBox .comment .content {
+    position: relative;
+  }
+  
+  .couponTextBox .comment .content>text:first-of-type {
+    /* white-space: nowrap;  */
+    -webkit-line-clamp: 2;
+    font-weight: 400;
+    font-size: 26rpx;
+    color: #555;
+    display: -webkit-box;
+    line-height: 40rpx;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    position: absolute;
+    top: -4rpx;
+  }
+  
+  .couponTextBox .comment .content>text:last-of-type {
+    position: absolute;
+    bottom: 23rpx;
+  }
+  
+  .couponTextBox .comment .content text:last-of-type text {
+    float: left;
+  }
+  
+  .couponTextBox .comment .content text:last-of-type text:first-of-type {
+    margin-right: 12rpx;
+    font-size: 26rpx;
+    line-height: 26rpx;
+    color: #f66;
+  }
+  
+  .couponTextBox .comment .money_no_coupon text:last-of-type text:first-of-type {
+    font-size: 28rpx;
+    color: #afafaf;
+  }
+  
+  .couponTextBox .comment .content text:last-of-type text:nth-of-type(2) {
+    /* margin-right: 32rpx; */
+    font-size: 30rpx;
+    line-height: 30rpx;
+    color: #f66;
+  }
+  
+  .couponTextBox .comment .content text:last-of-type text:nth-of-type(3) {
+    font-size: 28rpx;
+    line-height: 28rpx;
+    text-decoration: line-through;
+    color: #afafaf;
+    margin-left: 32rpx;
+  }
+  
+  .couponTextBox .comment .money_no_coupon text:last-of-type text:nth-of-type(3) {
+    text-decoration: none;
+  }
+  
+  .couponTextBox .comment .content text:last-of-type text:nth-of-type(2)>text:first-of-type {
+    margin-right: 0rpx;
+  }
+  
+  .couponTextBox .comment .content>text:last-of-type>text:last-of-type {
+  }
+  
+  /* 新手红包 */
+  
+  .RedEnvelopeTextBox {
+    position: relative;
+    width: 695rpx;
+    height: 170rpx;
+    float: left;
+    background-color: white;
+    border-radius: 12rpx;
+    margin: 12rpx 0;
+    color: #333;
+  }
+  
+  .RedEnvelopeTextBox .content {
+    width: 100%;
+    height: 128rpx;
+    box-sizing: border-box;
+    padding: 15rpx 0 0 18rpx;
+    border-radius: 12rpx 12rpx 0 0;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .RedEnvelopeTextBox .unclaimed {
+    background-color: #ff9e39;
+  }
+  
+  .RedEnvelopeTextBox .alreadyReceived, .RedEnvelopeTextBox .pastDue {
+    background-color: #ffd8ad;
+  }
+  
+  .RedEnvelopeTextBox .content image {
+    width: 96rpx;
+    height: 96rpx;
+  }
+  
+  .RedEnvelopeTextBox .content .text {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin-left: 18rpx;
+  }
+  
+  .RedEnvelopeTextBox .content .text text:first-of-type {
+    font-size: 32rpx;
+    line-height: 32rpx;
+    margin-top: 13rpx;
+  }
+  
+  .RedEnvelopeTextBox .content .text text:last-of-type {
+    font-size: 24rpx;
+    line-height: 24rpx;
+    margin-top: 16rpx;
+  }
+  
+  .RedEnvelopeTextBox .bottom {
+    width: 100%;
+    height: 40rpx;
+    padding-left: 32rpx;
+    box-sizing: border-box;
+  }
+  
+  .RedEnvelopeTextBox .bottom text {
+    width: 100%;
+    height: 40rpx;
+    display: block;
+    font-size: 20rpx;
+    color: #afafaf;
+    line-height: 40rpx;
+  }
+  
+  /* 弹窗样式 */
+  
+  .modal-content {
+  }
+  
+  .redPacketCPM {
+    width: 650rpx;
+    height: 869rpx;
+    /* position: relative; */
+  }
+  
+  .redPacketCPM image, .redPacketCPM .content {
+    width: 650rpx;
+    height: 869rpx;
+    position: absolute;
+    top: 0;
+    /* left: 0; */
+  }
+  
+  .redPacketCPM .content .Icon {
+    width: 121rpx;
+    height: 121rpx;
+    top: 100rpx;
+    left: 50%;
+    position: absolute;
+    margin-left: -60rpx;
+  }
+  
+  .redPacketCPM .content .open {
+    position: absolute;
+    bottom: 144rpx;
+    top: 486rpx;
+    left: 50%;
+    margin-left: -120rpx;
+    width: 240rpx;
+    height: 240rpx;
+  }
+  
+  .redPacketCPM .content .close {
+    width: 68rpx;
+    height: 68rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .redPacketCPM .content .close image {
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+    width: 48rpx;
+    height: 48rpx;
+  }
+  
+  .redPacketCPM .content .text {
+    width: 100%;
+    position: absolute;
+    top: 260rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .redPacketCPM .content .text text:first-of-type {
+    font-size: 28rpx;
+    color: #f5c095;
+    line-height: 28rpx;
+    margin-bottom: 76rpx;
+  }
+  
+  .redPacketCPM .content .text text:last-of-type {
+    font-size: 38rpx;
+    color: #ffeeb9;
+    line-height: 38rpx;
+  }
+  
+  /* 笑脸 */
+  
+  .emoji {
+    width: 120px;
+    height: 120px;
+    /* margin: 15px; */
+    background: #ffda6a;
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    transform: translate(-25px, -45px) scale(0.3);
+  }
+  
+  .emoji:after {
+    position: absolute;
+    bottom: -40px;
+    font-size: 18px;
+    width: 60px;
+    left: calc(50% - 30px);
+    color: #8a8a8a;
+  }
+  
+  .emoji__face, .emoji__eyebrows, .emoji__mouth {
+    position: absolute;
+  }
+  
+  .emoji__face:before, .emoji__face:after, .emoji__eyebrows:before,
+  .emoji__eyebrows:after, .emoji__mouth:before, .emoji__mouth:after {
+    position: absolute;
+    content: '';
+  }
+  
+  .emoji__face {
+    width: inherit;
+    height: inherit;
+  }
+  
+  .emoji--yay:after {
+    content: '';
+    animation: yay-reverse 1s linear infinite;
+  }
+  
+  .emoji--yay .emoji__face {
+    animation: yay 1s linear infinite alternate;
+  }
+  
+  .emoji--yay .emoji__eyebrows {
+    left: calc(50% - 3px);
+    top: 30px;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: -6px 0 0 0 #000, -36px 0 0 0px #000, 6px 0 0 0 #000, 36px 0 0 0px #000;
+  }
+  
+  .emoji--yay .emoji__eyebrows:before, .emoji--yay .emoji__eyebrows:after {
+    width: 36px;
+    height: 18px;
+    border-radius: 60px 60px 0 0;
+    background: transparent;
+    border: 6px solid black;
+    box-sizing: border-box;
+    border-bottom: 0;
+    bottom: 3px;
+    left: calc(50% - 18px);
+  }
+  
+  .emoji--yay .emoji__eyebrows:before {
+    margin-left: -21px;
+  }
+  
+  .emoji--yay .emoji__eyebrows:after {
+    margin-left: 21px;
+  }
+  
+  .emoji--yay .emoji__mouth {
+    top: 60px;
+    background: transparent;
+    left: 50%;
+  }
+  
+  .emoji--yay .emoji__mouth:after {
+    width: 80px;
+    height: 80px;
+    left: calc(50% - 40px);
+    top: -75px;
+    border-radius: 50%;
+    background: transparent;
+    border: 6px solid #000;
+    box-sizing: border-box;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    z-index: 1;
+  }
+  
+  .emoji--yay .emoji__mouth:before {
+    width: 6px;
+    height: 6px;
+    background: transparent;
+    border-radius: 50%;
+    bottom: 5px;
+    left: calc(50% - 3px);
+    box-shadow: -25px 0 0 0 #000,
+                  25px 0 0 0 #000,
+                  -35px -2px 30px 10px #d5234c,
+                  35px -2px 30px 10px #d5234c;
+  }
+  
+  @keyframes yay {
+    25% {
+      transform: rotate(-15deg);
+    }
+  
+    75% {
+      transform: rotate(15deg);
+    }
+  }
+  

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的钱包",
+  "navigationBarTextStyle":"#fff",
+  "navigationBarBackgroundColor":"#FA5B45",
+  "usingComponents": {
+    "easy-modal": "/component/easyModal/easy/easyModal",
+    "base-modal": "/component/easyModal/base/baseModal"
+  }
+}

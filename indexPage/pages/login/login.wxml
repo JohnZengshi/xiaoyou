@@ -1,0 +1,42 @@
+<!--pages/login/login.wxml-->
+<view class='section'>
+  <view class='login'>
+    <input class='phone' bindinput='phoneInput' placeholder='请输入手机号码' value='{{phoneValue}}'></input>
+    <input class='authCode' bindinput='authCodeInput' placeholder='请输入验证码' value='{{authCodeValue}}'></input>
+    <view class='{{active.getauthCodeActive}} getauthCode' catchtap='{{active.getAuthCode}}'>{{active.getauthCodeSecond}}</view>
+  </view>
+  <button class='{{active.btnActive}} btn' catchtap='{{active.bindPhone}}'>开始验证</button>
+  <text class='Notescontact' catchtap='Notescontact'>联系客服</text>
+
+  <easy-modal id="easyModal" title="这个是标题 01" bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEventFirst">
+    <view class='modal-content'>
+      <view wx:if="{{Modal.authCodeFaile}}" class='authCodeFaile'>
+        <view class='top'>身份验证失败</view>
+        <view class='content'>验证码不正确或失效，请重新获取验证码~</view>
+        <button class='btn' catchtap="_confirmEventFirst">知道了</button>
+      </view>
+
+      <view wx:if="{{Modal.authCodeSuccess}}" class='authCodeSuccess'>
+        登录成功
+      </view>
+
+      <view wx:if="{{Modal.networkOutage}}" class='networkOutage'>
+        <view class='top'>身份验证失败</view>
+        <view class='content'>网络不给力，你重新再试试</view>
+        <button class='btn' catchtap="_confirmEventFirst">知道了</button>
+      </view>
+
+      <view wx:if="{{Modal.phonHasBind}}" class='phonHasBind'>
+        <view class='top'>身份验证失败</view>
+        <view class='content'>
+          <text>主人，这个号已经被别人绑定过了，</text>
+          <text>请主人换个新号码吧~</text>
+        </view>
+        <view class='btn'>
+          <view catchtap='Notescontact'>联系客服</view>
+          <view catchtap="_confirmEventFirst">知道了</view>
+        </view>
+      </view>
+    </view>
+  </easy-modal>
+</view>

@@ -1,0 +1,318 @@
+<!--logs.wxml-->
+<view class="section">
+  <scroll-view class='sectionBox' id='scrollBox' data-id='scrollBox' scroll-y="true" style="margin-bottom: 40px;" scroll-into-view="{{toView}}"
+    bindscrolltoupper="loadMore">
+    <block wx:for="{{text}}" wx:key="item">
+      <view id='{{"to"+(index+1)}}' class='{{item.from}}TextBox {{item.RedEnvelopeStatus}} {{item.couponStatus}} {{item.greetings}} BOX'
+        animation="{{animationData}}">
+        <!-- 对话气泡 -->
+        <view wx:if="{{item.from == 'firstai'}}">
+          <text>{{item.content[0]}}{{nickName}}{{item.content[1]}}</text>
+        </view>
+        <view wx:if="{{item.from == 'ai' || item.from == 'user'}}">
+          <text wx:for="{{item.content}}" wx:for-item="items" wx:key="key">{{items}}</text>
+        </view>
+        <!-- 按钮 -->
+        <scroll-view wx:if="{{item.from == 'btnOption'}}" scroll-x="true" class='{{item.btn}}Option'>
+          <view wx:for="{{item.content}}" wx:for-item="items" wx:for-index="idx" wx:key="items" class='btn'>
+            <view catchtap="{{item.catchtap}}" data-swicthKey="{{item.swicthKey}}" data-content='{{items}}' class='btn-area'>
+              <image wx:if="{{item.btn == 'swicth'}}" src='../../images/change.png' style='width:40rpx;height:40rpx;  vertical-align: middle;margin-bottom:5rpx'></image>
+              <text>{{items}}</text>
+            </view>
+          </view>
+        </scroll-view>
+
+        <view wx:if="{{item.from == 'btn'}}" wx:for="{{item.content}}" wx:for-index="idx" wx:for-item="items" wx:key="items" class='btn'>
+          <button open-type='{{item.share}}' catchtap="{{item.catchtap}}{{idx}}" data-swicthKey="{{item.swicthKey}}" data-content='{{items}}'
+            data-event_code="{{item.keyword_code}}" size="mini" class='btn-area'>
+            <image wx:if="{{item.btn == 'swicth'}}" src='../../images/change.png' style='width:40rpx;height:40rpx;  vertical-align: middle;margin-bottom:5rpx'></image>
+            <text>{{items}}</text>
+          </button>
+
+          <!-- <view wx:if="{{items == '可以'}}" class="emoji  emoji--yay">
+            <view class="emoji__face">
+              <view class="emoji__eyebrows"></view>
+              <view class="emoji__mouth"></view>
+            </view>
+          </view> -->
+        </view>
+
+        <!-- 天气卡片 -->
+        <!-- 今天天气 -->
+        <view wx:if="{{item.from == 'weather'}}" class='content {{item.today.picName}}background'>
+          <view class='top'>
+            <view class='left'>
+              <view>
+                <text class='temperature'>{{item.today.temperature}}</text>
+                <text class='weather'>{{item.today.weather}}</text>
+              </view>
+              <view>
+                <text class='day'>今天</text>
+                <image wx:if="{{item.today.city == locationCity }}" style='width:30rpx; height:30rpx;margin-bottom:-4rpx;' src='../../images/location.png'></image>
+                <text class='city'>{{item.today.city}}</text>
+              </view>
+            </view>
+            <view class='rigth'>
+              <image style="width:140rpx; height: 140rpx;" mode='aspectFill' src='../../images/{{item.today.picName}}.png'></image>
+            </view>
+          </view>
+          <view class='bottom'>
+            <text>{{item.today.dressing_advice}}</text>
+          </view>
+        </view>
+        <!-- 未来天气 -->
+        <view wx:if="{{item.from == 'weather'}}" wx:for="{{item.futureWeather}}" wx:for-item="items" wx:for-index="idx" wx:key="items"
+          class='bottom'>
+          <view class='day' wx:if="{{idx == 0}}">明天</view>
+          <view class='day' wx:if="{{idx == 1}}">{{items.week}}</view>
+          <view class='weather'>
+            <image style="width:56rpx; height: 56rpx;" mode='aspectFill' src='../../images/mini_{{items.picName}}.png'></image>
+            <text>{{items.weather}}</text>
+          </view>
+          <view class='temperature'>{{items.temperature}}</view>
+        </view>
+
+        <!-- 星座卡片 -->
+        <view wx:if="{{item.from == 'constellation'}}" class='comment'>
+          <view class='left'>
+            <view class='currentXZ'>
+              <image style="width:100rpx; height: 100rpx;" mode='aspectFill' src='../../images/{{item.picName}}.png'></image>
+              <text>{{item.currentXZ}}</text>
+            </view>
+            <view class='XZbox'>
+              <view>
+                <text>贵人星座</text>
+                <text>{{item.grxz}}</text>
+              </view>
+              <view>
+                <text>幸运数字</text>
+                <text>{{item.lucky_num}}</text>
+              </view>
+              <view>
+                <text>幸运颜色</text>
+                <text>{{item.lucky_color}}</text>
+              </view>
+            </view>
+          </view>
+          <view class='rigth'>
+            <text>{{item.summary_star}}</text>
+            <text>综合指数</text>
+          </view>
+        </view>
+        <view wx:if="{{item.from == 'constellation'}}" class='bottomBox'>
+          <view class='time'>【今日运势】</view>
+          <view class='work_txt'>{{item.work_txt}}</view>
+        </view>
+
+        <!-- 优惠券卡片 -->
+        <!-- 有券有返利 -->
+        <view wx:if="{{item.from == 'coupon' && item.couponStatus == 'botn_money_coupon'}}">
+          <image class='background' src='../../images/coupon/botn_money_coupon.png'></image>
+          <view catchtap='couponToDetail' data-item="{{item}}" class='comment'>
+            <view class='left'>
+              <view class='pic'>
+                <image style="width:140rpx; height: 140rpx;border-radius: 8rpx;" mode='aspectFill' src="{{item.data.pic}}"></image>
+              </view>
+              <view class='content'>
+                <text>{{item.data.title}}</text>
+                <text>
+                  <text>券后价</text>
+                  <text>
+                    <text style='margin-right:0;'>￥</text>
+                    <text>{{item.QHJ}}</text>
+                  </text>
+                  <!-- <text>{{item.data.discountprice}}</text> -->
+                </text>
+              </view>
+            </view>
+            <view class='right'>
+              <text>
+                <text style='font-size: 26rpx;'>￥</text>
+                <text style='font-size: 44rpx;font-weight: 800;line-height:44rpx'>{{item.data.ulanprice}}</text>
+              </text>
+            </view>
+            <view class='bottom botn_money_coupon'>
+              <text>领券购买、确认收货，预计可领</text>
+              <text>￥{{item.data.commission}}</text>
+              <text>现金返利红包</text>
+            </view>
+          </view>
+        </view>
+
+        <!-- 有券无返利 -->
+        <view wx:if="{{item.from == 'coupon'  && item.couponStatus == 'coupon_no_money'}}">
+          <image class='background' src='../../images/coupon/coupon_no_money.png'></image>
+          <view catchtap='couponToDetail' data-item="{{item}}" class='comment'>
+            <view class='left'>
+              <view class='pic'>
+                <image style="width:140rpx; height: 140rpx;border-radius: 8rpx;" mode='aspectFill' src="{{item.data.pic}}"></image>
+              </view>
+              <view class='content'>
+                <text>{{item.data.title}}</text>
+                <text>
+                  <text>券后价</text>
+                  <text>
+                    <text style='margin-right:0;'>￥</text>
+                    <text>{{item.QHJ}}</text>
+                  </text>
+                  <!-- <text>{{item.data.discountprice}}</text> -->
+                </text>
+              </view>
+            </view>
+            <view class='right'>
+              <text>
+                <text style='font-size: 26rpx;'>￥</text>
+                <text style='font-size: 44rpx;font-weight: 800;line-height:44rpx'>{{item.data.ulanprice}}</text>
+              </text>
+            </view>
+          </view>
+        </view>
+
+        <!-- 无券有返利 -->
+        <view wx:if="{{item.from == 'coupon' && item.couponStatus == 'money_no_coupon'}}">
+          <image class='background' src='../../images/coupon/money_no_coupon.png'></image>
+          <view catchtap='couponToDetail' data-item="{{item}}" class='comment'>
+            <view class='left money_no_coupon_Left'>
+              <view class='pic'>
+                <image style="width:140rpx; height: 140rpx;border-radius: 8rpx;" mode='aspectFill' src="{{item.data.pic}}"></image>
+              </view>
+              <view class='content money_no_coupon'>
+                <text>{{item.data.title}}</text>
+                <text>
+                  <text>原价:￥{{item.data.discountprice}}</text>
+                </text>
+              </view>
+            </view>
+            <view class='bottom money_no_coupon'>
+              <image src='../../images/coupon/rebate_money.png'></image>
+              <view class='content'>
+                <view>
+                  <text>1.复制淘口令,去淘宝下单购买</text>
+                </view>
+                <view>
+                  <text>2.确认收货，预计领</text>
+                  <text>￥{{item.data.commission}}</text>
+                  <text>现金返利红包</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+
+        <!-- 看好货和找货的 -->
+        <view wx:if="{{item.from == 'goods'}}" wx:for="{{item.goods}}" wx:for-item="items" wx:key="items" class='comment'>
+          <!-- 看好货结构 -->
+          <view wx:if="{{items.from == 'lookgoods'}}" catchtap='toH5' data-item='{{items}}' data-index="{{index}}">
+            <view class='lookPic'>
+              <image style="width:200rpx; height: 140rpx; border-radius: 8rpx;" mode='aspectFill' src="{{items.image1}}{{items.piclist}}"></image>
+            </view>
+            <view class='content'>
+              <text>{{items.title}}{{items.name}}</text>
+              <text>{{items.description}}</text>
+            </view>
+          </view>
+          <!-- 找好物结构 -->
+          <view wx:if="{{items.from == 'findgoods'}}" catchtap='toDetail' id='{{index}}' data-item='{{items}}' data-index="{{index}}">
+            <view class='findPic'>
+              <image style="width:140rpx; height: 140rpx; border-radius: 8rpx;" mode='aspectFit' src="{{items.pic}}"></image>
+            </view>
+            <view class='content'>
+              <text>{{items.title}}</text>
+              <view>
+                <text>券后价</text>
+                <text>￥{{items.price}}</text>
+                <text>{{items.oldprice}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <!-- 基础红包 -->
+        <view wx:if="{{item.from == 'RedEnvelope'}}" catchtap='{{item.RedEnvelopeStatus == "unclaimed"?"_redPacketCPM":item.RedEnvelopeStatus == "alreadyReceived"?"_toRedPacketDetail":""}}'
+          data-item="{{item}}">
+          <view class='content {{item.RedEnvelopeStatus}}'>
+            <image wx:if="{{item.RedEnvelopeStatus == 'unclaimed'}}" src='../../images/basicsPacket/red_packets_normal.png'></image>
+            <image wx:if="{{item.RedEnvelopeStatus == 'alreadyReceived' || item.RedEnvelopeStatus == 'pastDue'}}" src='../../images/basicsPacket/red_packets_hover.png'></image>
+            <view class='text'>
+              <text>{{item.content[0]}}</text>
+              <text wx:if="{{item.RedEnvelopeStatus == 'unclaimed'}}">领取红包</text>
+              <text wx:if="{{item.RedEnvelopeStatus == 'alreadyReceived'}}">已领取</text>
+              <text wx:if="{{item.RedEnvelopeStatus == 'pastDue'}}">24小时内未领，红包已失效</text>
+            </view>
+          </view>
+          <view class='bottom'>
+            <text wx:if="{{item.type == 'newcomer'}}">新手红包</text>
+            <text wx:if="{{item.type == 'surprise'}}">惊喜红包</text>
+          </view>
+        </view>
+
+      </view>
+    </block>
+  </scroll-view>
+  <!-- // "enablePullDownRefresh": true -->
+
+  <view class='bottomPack' style='visibility:{{firstParameter.firstOption}}'>
+    <view class='Wallet'>
+      <image catchtap='_entryWallet' src='../../images/wallet01/{{entryIngWallet}}'></image>
+    </view>
+    <view class='optionBox'>
+      <scroll-view class='option' data-id='option' scroll-x="true">
+        <!-- <view class='CarveUpCash'>瓜分现金</view> -->
+        <view class='findCoupon' catchtap='_findCoupon'>优惠券</view>
+        <view class='findGoods' catchtap='_findGoods'>找好物</view>
+        <!-- <view class='wordRedPacket' catchtap='_Bonus'>口令红包</view> -->
+        <view catchtap='_checkWeather' data-content="查天气">天气</view>
+        <view catchtap='_checkConstellation'>星座运势</view>
+        <!-- <view catchtap='_lookGoods'>看好货</view>  -->
+        <!-- <view catchtap='_uploadChatRecord'>上传聊天记录</view> -->
+        <!-- <view catchtap='_ObtainChatRecord'>获取聊天记录</view> -->
+      </scroll-view>
+    </view>
+    <form bindsubmit="formSubmit" report-submit>
+      <view class="search">
+        <input placeholder="我想要……" bindinput='valueInput' value='{{valInput}}' />
+        <button form-type="submit" type="default" class="btn-area" catchtap="bindButtonTap">
+          发送
+        </button>
+      </view>
+    </form>
+  </view>
+
+  <!-- <form bindsubmit="formSubmit" report-submit>
+    <view class="form_group">
+      <text>姓  名：</text>
+      <input type="text" placeholder="请输入姓名" name="data_name" maxlength="20" value="" auto-focus/>
+    </view>
+    <button class="save_btn" form-type="submit">确认参加</button>
+  </form> -->
+
+
+  <easy-modal id="easyModal" title="这个是标题 01" bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEventFirst">
+    <view class='modal-content'>
+      <view wx:if="{{Modal.redPacketCPM}}" class='redPacketCPM'>
+        <image src='../../images/basicsPacket/red_packets_bg.png'></image>
+        <view class='content'>
+          <image class='Icon' src='../../images/basicsPacket/pop_up_avatar.png'></image>
+          <view class='text' wx:if="{{basicsPacket.type == 'newcomer'}}">
+            <text>小优给你发了一个新手红包</text>
+            <text>主人，初次见面，请多关照！</text>
+          </view>
+          <view class='text' wx:if="{{basicsPacket.type == 'surprise'}}">
+            <text>小优给你发了一个惊喜红包</text>
+            <text>{{basicsPacket.PacketModalText}}</text>
+          </view>
+          <image wx:if="{{!basicsPacket.isOpen}}" catchtap='openPacket' data-item="{{basicsPacket}}" class='open' src='../../images/basicsPacket/open_red_packets_normal.png'></image>
+          <image wx:if="{{basicsPacket.isOpen}}" class='open' src='../../images/basicsPacket/open_red_packets_hover.png'></image>
+          <view class='close' catchtap='closePacket'>
+            <image wx:if="{{!basicsPacket.isClose}}" src='../../images/basicsPacket/red_packets_closenormal.png'></image>
+            <image wx:if="{{!basicsPacket.isClose}}" src='../../images/basicsPacket/red_packets_closehover.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </easy-modal>
+
+  <weatherModal></weatherModal>
+</view>
+<!-- <view class='tiper'></view> -->

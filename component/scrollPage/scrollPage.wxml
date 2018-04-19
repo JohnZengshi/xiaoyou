@@ -1,0 +1,5 @@
+<view class="inner">
+  <!-- {{innerText}} -->
+  <!-- 哈哈哈 -->
+</view>
+<slot></slot>

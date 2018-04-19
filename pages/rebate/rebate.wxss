@@ -1,0 +1,677 @@
+/* pages/rebate/rebate.wxss */
+page {
+  height: 100%;
+}
+.section {
+  height: 100%;
+  background-color: #f5f5f6;
+  /* margin-bottom: 20rpx; */
+  position: relative;
+}
+.course {
+  font-size: 24rpx;
+  color: #888888;
+  text-align: center;
+  bottom: 40rpx;
+  position: fixed;
+  width: 100%;
+}
+.course text {
+  color: #3685E6;
+}
+.section .redPacket {
+  width: 100%;
+}
+.section .towithdrawal {
+  background-color: #ffffff;
+  margin-top: 30rpx;
+  width: 100%;
+  height: 180rpx;
+}
+.section .history,
+.section .uploadOrder {
+  width: 100%;
+  background-color: #ffffff;
+}
+.section .immediateWithdrawal {
+  width: 100%;
+  height: 100rpx;
+  background-color: #ff756a;
+  position: absolute;
+  bottom: 0;
+  font-size: 36rpx;
+  color: #ffffff;
+  text-align: center;
+  line-height: 100rpx;
+}
+.section .active {
+  color: #999 !important;
+  background-color: #fff !important;
+}
+.modal-content {
+  /* padding: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+}
+.modal-footer {
+  background: #ffffff;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-top: 1rpx solid #e5e5e5;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+.btn {
+  flex: 1;
+  text-align: center;
+  /* padding:  19rpx 5rpx; */
+}
+.btn-primary {
+  color: #00A7F7;
+  font-weight: bold;
+}
+/* 我的钱包 */
+/* 各种弹窗 */
+.noticePopup,
+.bindweixinis,
+.firstEntry,
+.withdrawalFail,
+.robotDown,
+.addRobot,
+.repackPastDue {
+  width: 580rpx;
+  padding: 60rpx 44rpx 40rpx 44rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.noticePopup > text,
+.bindweixinis > text,
+.firstEntry > text,
+.withdrawalFail > text,
+.robotDown > text,
+.addRobot > text,
+.repackPastDue > text {
+  font-size: 32rpx;
+  color: #333;
+}
+.noticePopup .close,
+.bindweixinis .close,
+.firstEntry .close,
+.withdrawalFail .close,
+.robotDown .close,
+.addRobot .close,
+.repackPastDue .close {
+  width: 76rpx;
+  height: 76rpx;
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.noticePopup .close image,
+.bindweixinis .close image,
+.firstEntry .close image,
+.withdrawalFail .close image,
+.robotDown .close image,
+.addRobot .close image,
+.repackPastDue .close image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -28rpx;
+  margin-top: -28rpx;
+  width: 56rpx;
+  height: 56rpx;
+}
+.noticePopup .middle,
+.bindweixinis .middle,
+.firstEntry .middle,
+.withdrawalFail .middle,
+.robotDown .middle,
+.addRobot .middle,
+.repackPastDue .middle {
+  margin-top: 40rpx;
+}
+.noticePopup .middle .row,
+.bindweixinis .middle .row,
+.firstEntry .middle .row,
+.withdrawalFail .middle .row,
+.robotDown .middle .row,
+.addRobot .middle .row,
+.repackPastDue .middle .row {
+  margin-bottom: 24rpx;
+}
+.noticePopup .middle .row .num,
+.bindweixinis .middle .row .num,
+.firstEntry .middle .row .num,
+.withdrawalFail .middle .row .num,
+.robotDown .middle .row .num,
+.addRobot .middle .row .num,
+.repackPastDue .middle .row .num {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+}
+.noticePopup .middle .row text,
+.bindweixinis .middle .row text,
+.firstEntry .middle .row text,
+.withdrawalFail .middle .row text,
+.robotDown .middle .row text,
+.addRobot .middle .row text,
+.repackPastDue .middle .row text {
+  width: 459rpx;
+  font-size: 26rpx;
+  color: #888;
+  line-height: 44rpx;
+}
+.noticePopup .btn,
+.bindweixinis .btn,
+.firstEntry .btn,
+.withdrawalFail .btn,
+.robotDown .btn,
+.addRobot .btn,
+.repackPastDue .btn {
+  display: block;
+  width: 200rpx;
+  height: 68rpx;
+  margin: 20rpx auto;
+  border-radius: 4rpx;
+  font-size: 30rpx;
+  line-height: 68rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #FF7C72;
+}
+.noticePopup button::after,
+.bindweixinis button::after,
+.firstEntry button::after,
+.withdrawalFail button::after,
+.robotDown button::after,
+.addRobot button::after,
+.repackPastDue button::after {
+  border: none;
+}
+.beforLead {
+  width: 560rpx;
+  padding: 60rpx 60rpx 40rpx 60rpx;
+  box-sizing: border-box;
+}
+.beforLead .close {
+  width: 76rpx;
+  height: 76rpx;
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.beforLead .close image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -28rpx;
+  margin-top: -28rpx;
+  width: 56rpx;
+  height: 56rpx;
+}
+.beforLead .title {
+  font-size: 30rpx;
+  color: #000;
+  line-height: 30rpx;
+}
+.beforLead .input {
+  margin-top: 40rpx;
+  width: 443rpx;
+  height: 70rpx;
+  min-height: 0;
+  border-radius: 5rpx;
+  background-color: #F3F3F3;
+  font-size: 30rpx;
+  padding-left: 24rpx;
+}
+.beforLead .warm {
+  margin-top: 15rpx;
+}
+.beforLead .warm text {
+  font-size: 24rpx;
+  color: #F76260;
+  line-height: 26rpx;
+}
+.beforLead .warm image {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 13rpx;
+}
+.beforLead .bottom {
+  width: 200rpx;
+  height: 70rpx;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: #FF7C72;
+  font-size: 30rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #fff;
+  margin-top: 42rpx;
+}
+.beforLead .bottom::after {
+  border: none;
+}
+.withdrawal {
+  width: 561rpx;
+  padding: 60rpx 60rpx 43rpx 60rpx;
+  width: 560rpx;
+  padding: 60rpx 60rpx 40rpx 60rpx;
+  box-sizing: border-box;
+}
+.withdrawal .close {
+  width: 76rpx;
+  height: 76rpx;
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.withdrawal .close image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -28rpx;
+  margin-top: -28rpx;
+  width: 56rpx;
+  height: 56rpx;
+}
+.withdrawal .title {
+  font-size: 30rpx;
+  color: #000;
+  line-height: 30rpx;
+}
+.withdrawal .input {
+  margin-top: 40rpx;
+  width: 443rpx;
+  height: 70rpx;
+  min-height: 0;
+  border-radius: 5rpx;
+  background-color: #F3F3F3;
+  font-size: 30rpx;
+  padding-left: 24rpx;
+  text-align: center;
+}
+.withdrawal .warm {
+  margin-top: 15rpx;
+}
+.withdrawal .warm text {
+  font-size: 24rpx;
+  color: #F76260;
+  line-height: 26rpx;
+}
+.withdrawal .warm image {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 13rpx;
+}
+.withdrawal .bottom {
+  width: 200rpx;
+  height: 70rpx;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: #FF7C72;
+  font-size: 30rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #fff;
+  margin-top: 42rpx;
+}
+.withdrawal .bottom::after {
+  border: none;
+}
+.ImportSuccess {
+  width: 600rpx;
+  height: 679rpx;
+}
+.ImportSuccess .top {
+  width: 100%;
+  height: 243rpx;
+  position: relative;
+  text-align: center;
+}
+.ImportSuccess .top image {
+  position: absolute;
+}
+.ImportSuccess .top image:nth-of-type(1) {
+  width: 30rpx;
+  height: 30rpx;
+  top: 20rpx;
+  left: 20rpx;
+  z-index: 2;
+}
+.ImportSuccess .top image:nth-of-type(2) {
+  width: 100rpx;
+  height: 100rpx;
+  top: 33rpx;
+  left: 50%;
+  margin-left: -50rpx;
+  z-index: 3;
+}
+.ImportSuccess .top image:nth-of-type(3) {
+  width: 100%;
+  height: 243rpx;
+  top: 0;
+  left: 0;
+}
+.ImportSuccess .top text {
+  position: relative;
+  z-index: 3;
+  font-size: 32rpx;
+  color: #ffffff;
+  line-height: 120rpx;
+}
+.ImportSuccess .top text {
+  line-height: 345rpx;
+}
+.ImportSuccess .middle {
+  height: 125rpx;
+  margin-top: 78rpx;
+}
+.ImportSuccess .middle .warm {
+  height: 67rpx;
+  text-align: center;
+  line-height: 67rpx;
+  vertical-align: middle;
+}
+.ImportSuccess .middle .warm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ImportSuccess .middle .warm image {
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 12rpx;
+  margin-bottom: -1rpx;
+}
+.ImportSuccess .middle .warm text:nth-of-type(1),
+.ImportSuccess .middle .warm text:nth-of-type(2) {
+  font-size: 26rpx;
+  line-height: 44rpx;
+}
+.ImportSuccess .middle .warm text:nth-of-type(3) {
+  font-size: 20rpx;
+  line-height: 20rpx;
+  margin-top: 15rpx;
+  color: #999;
+}
+.ImportSuccess .bottom {
+  margin-top: 58rpx;
+  width: 460rpx;
+  height: 90rpx;
+  background-color: #FF756A;
+  color: #ffffff;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 90rpx;
+}
+.ImportSuccess .bottom::after {
+  border: none;
+}
+.orderConfirmation {
+  width: 600rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+.orderConfirmation .top {
+  margin-top: 50rpx;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 32rpx;
+  color: #333;
+}
+.orderConfirmation .content {
+  margin-top: 30rpx;
+  font-size: 26rpx;
+  color: #999;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.orderConfirmation .btn {
+  margin-top: 50rpx;
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  border-radius: 0 0 10rpx 10rpx;
+  text-align: center;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  color: #ff756a;
+  border-top: 1rpx solid #999;
+  display: flex;
+  flex-direction: row;
+}
+.orderConfirmation .btn view {
+  width: 50%;
+}
+.orderConfirmation .btn view:first-of-type {
+  border-right: 1rpx solid #999;
+  box-sizing: border-box;
+  color: #333;
+}
+.orderConfirmation.btn view::after {
+  border: none;
+}
+.section .myWallet {
+  width: 100%;
+  position: relative;
+}
+.section .myWallet .accumulativeMoney {
+  width: 100%;
+  background-image: linear-gradient(to right, #ff5a4e, #fb7e57);
+}
+.section .myWallet .accumulativeMoney .malfunction {
+  width: 100%;
+  height: 80rpx;
+  background-color: #FFF4EC;
+}
+.section .myWallet .accumulativeMoney .malfunction image {
+  width: 44rpx;
+  height: 44rpx;
+  margin-left: 24rpx;
+  margin-right: 8rpx;
+}
+.section .myWallet .accumulativeMoney .malfunction .scrollText {
+  width: 477rpx;
+}
+.section .myWallet .accumulativeMoney .malfunction .scrollText .marquee_box {
+  width: 100%;
+  position: relative;
+}
+.section .myWallet .accumulativeMoney .malfunction .scrollText .marquee_box .marquee_text {
+  white-space: nowrap;
+  position: relative;
+}
+.section .myWallet .accumulativeMoney .malfunction .scrollText .marquee_box .marquee_text text {
+  font-size: 23rpx;
+  color: #ac2000;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  line-height: 80rpx;
+}
+.section .myWallet .accumulativeMoney .malfunction button {
+  width: 136rpx;
+  height: 44rpx;
+  border-radius: 30rpx;
+  border: 2rpx solid #ac2000;
+  font-size: 20rpx;
+  color: #ac2000;
+  text-align: center;
+  line-height: 44rpx;
+  padding: 0;
+  margin-left: 32rpx;
+  margin-right: 28rpx;
+  background-color: #FFF4EC;
+  box-sizing: content-box;
+}
+.section .myWallet .accumulativeMoney .malfunction button::after {
+  border: none;
+}
+.section .myWallet .accumulativeMoney .notice {
+  display: block;
+  padding: 0 32rpx;
+  width: 100%;
+  height: 72rpx;
+  line-height: 72rpx;
+  color: #ffffff;
+  text-align: right;
+  font-size: 32rpx;
+  box-sizing: border-box;
+}
+.section .myWallet .accumulativeMoney .content {
+  height: 336rpx;
+}
+.section .myWallet .accumulativeMoney .content > view:first-of-type {
+  margin-top: 32rpx;
+  font-size: 26rpx;
+  color: #FFF;
+  line-height: 26rpx;
+}
+.section .myWallet .accumulativeMoney .content > view:last-of-type {
+  margin-top: 40rpx;
+  line-height: 92rpx;
+  font-size: 92rpx;
+  color: #FFF;
+  font-weight: 600;
+}
+.section .myWallet .accumulativeMoney .content button {
+  margin-top: 48rpx;
+  width: 200rpx;
+  height: 68rpx;
+  border-radius: 34rpx;
+  background-color: #FFF;
+  font-size: 28rpx;
+  color: #FF5548;
+  text-align: center;
+  line-height: 68rpx;
+}
+.section .myWallet .accumulativeMoney .content button::after {
+  border: none;
+}
+.section .myWallet .accumulativeMoney .redPacket {
+  width: 100%;
+  height: 148rpx;
+  position: relative;
+}
+.section .myWallet .accumulativeMoney .redPacket .path {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  opacity: .1;
+}
+.section .myWallet .accumulativeMoney .redPacket .cont {
+  width: 100%;
+  height: 100%;
+  padding: 0 50rpx;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.section .myWallet .accumulativeMoney .redPacket .cont .RebatePage > text:first-of-type,
+.section .myWallet .accumulativeMoney .redPacket .cont .ActivityPage > text:first-of-type,
+.section .myWallet .accumulativeMoney .redPacket .cont .WithdrawalHistory > text:first-of-type {
+  font-size: 26rpx;
+  line-height: 26rpx;
+  color: #FFF;
+}
+.section .myWallet .accumulativeMoney .redPacket .cont .RebatePage > text:last-of-type,
+.section .myWallet .accumulativeMoney .redPacket .cont .ActivityPage > text:last-of-type,
+.section .myWallet .accumulativeMoney .redPacket .cont .WithdrawalHistory > text:last-of-type {
+  margin-top: 20rpx;
+  line-height: 32rpx;
+  font-size: 32rpx;
+  color: #FFF;
+  font-weight: 600;
+}
+.section .myWallet .accumulativeMoney .redPacket .cont .line {
+  width: 2rpx;
+  height: 52rpx;
+  background-color: #FF9C8E;
+}
+.section .uploadOrder {
+  width: 100%;
+  height: 124rpx;
+  background-color: #FFF;
+}
+.section .uploadOrder text {
+  margin-left: 28rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+.section .uploadOrder button {
+  width: 128rpx;
+  height: 72rpx;
+  margin: 0;
+  padding: 0;
+  margin-right: 28rpx;
+  font-size: 26rpx;
+  color: #FFF;
+  text-align: center;
+  line-height: 72rpx;
+  border-radius: 40rpx;
+  background: linear-gradient(to right, #ff5a4e, #fb7e57);
+  box-shadow: 3rpx 4rpx 10rpx #fb7e57;
+}
+.section .uploadOrder button::after {
+  border: none;
+}
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flex-v {
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.flex-r {
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.flex-1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.flex-align-center {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.flex-pack-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.flex-pack-justify {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}

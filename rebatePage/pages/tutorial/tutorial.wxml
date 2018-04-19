@@ -1,0 +1,9 @@
+<!--pages/rebatePage/tutorial.wxml-->
+<view class='section'>
+  <image src='../../../images/wallet01/my-wallet-36.png'></image>
+  <view class='bottom'>
+    <text>如遇到问题，请点击复制微信号</text>
+    <text catchtap='copyCode' data-code="{{robot}}">【{{robot}}】</text>
+    <text>，添加小优助理为好友</text>
+  </view>
+</view>

@@ -1,0 +1,31 @@
+{
+  "pages":[
+    "pages/index/index", 
+    "pages/rebate/rebate",
+    "pages/details/detail"
+  ],
+  "subPackages": [
+    {
+      "root": "rebatePage",
+      "pages": [
+        "pages/activityPacket/activityPacket",
+        "pages/rebatePacket/rebatePacket",
+        "pages/tutorial/tutorial",
+        "pages/withdrawalHistory/withdrawalHistory"
+      ]
+    }, {
+      "root": "indexPage",
+      "pages": [
+        "pages/basicsPacket/packetDetails",
+        "pages/h5/h5",
+        "pages/login/login"
+      ]
+    }
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}

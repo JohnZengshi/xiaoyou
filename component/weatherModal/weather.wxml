@@ -1,0 +1,22 @@
+<!--component/weatherModal/weather.wxml-->
+<view wx:if="{{item.from == 'weather'}}" class='content {{item.today.picName}}background'>
+    <view class='top'>
+      <view class='left'>
+        <view>
+          <text class='temperature'>{{item.today.temperature}}</text>
+          <text class='weather'>{{item.today.weather}}</text>
+        </view>
+        <view>
+          <text class='day'>今天</text>
+          <image wx:if="{{item.today.city == locationCity }}" style='width:30rpx; height:30rpx;margin-bottom:-4rpx;' src='../../images/location.png'></image>
+          <text class='city'>{{item.today.city}}</text>
+        </view>
+      </view>
+      <view class='rigth'>
+        <image style="width:140rpx; height: 140rpx;" mode='aspectFill' src='../../images/{{item.today.picName}}.png'></image>
+      </view>
+    </view>
+    <view class='bottom'>
+      <text>{{item.today.dressing_advice}}</text>
+    </view>
+</view>

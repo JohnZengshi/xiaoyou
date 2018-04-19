@@ -1,0 +1,695 @@
+/* pages/rebate/rebate.wxss */
+
+page {
+    height: 100%;
+}
+
+.section {
+    height: 100%;
+    background-color: #f5f5f6;
+    /* margin-bottom: 20rpx; */
+    position: relative;
+}
+
+.course {
+    font-size: 24rpx;
+    color: #888888;
+    text-align: center;
+    bottom: 40rpx;
+    position: fixed;
+    width: 100%;
+}
+
+.course text {
+    color: #3685E6;
+}
+
+.section .redPacket {
+    width: 100%;
+}
+
+.section .towithdrawal {
+    background-color: #ffffff;
+    margin-top: 30rpx;
+    width: 100%;
+    height: 180rpx;
+}
+
+.section .history,
+.section .uploadOrder {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.section .immediateWithdrawal {
+    width: 100%;
+    height: 100rpx;
+    background-color: #ff756a;
+    position: absolute;
+    bottom: 0;
+    font-size: 36rpx;
+    color: #ffffff;
+    text-align: center;
+    line-height: 100rpx;
+}
+
+.section .active {
+    color: #999 !important;
+    background-color: #fff !important;
+}
+
+.modal-content {
+    /* padding: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+}
+
+.modal-footer {
+    background: #ffffff;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-top: 1rpx solid #e5e5e5;
+    border-bottom-left-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+}
+
+.btn {
+    flex: 1;
+    text-align: center;
+    /* padding:  19rpx 5rpx; */
+}
+
+.btn-primary {
+    color: #00A7F7;
+    font-weight: bold;
+}
+
+.btn-default {}
+
+/* 我的钱包 */
+
+/* 各种弹窗 */
+
+
+// 提示绑定机器人弹窗
+.noticePopup,
+.bindweixinis,
+.firstEntry,
+.withdrawalFail,
+.robotDown,
+.addRobot,
+.repackPastDue{
+    width: 580rpx; // height: 880rpx;
+    padding: 60rpx 44rpx 40rpx 44rpx;
+    box-sizing: border-box;
+    position: relative;
+    >text {
+        font-size: 32rpx;
+        color: #333;
+    }
+    .close {
+        width: 76rpx;
+        height: 76rpx;
+        box-sizing: border-box;
+        position: absolute;
+        right: 0;
+        top: 0;
+        image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -28rpx;
+            margin-top: -28rpx;
+            width: 56rpx;
+            height: 56rpx;
+        }
+    }
+    .middle {
+        margin-top: 40rpx;
+        .row {
+            margin-bottom: 24rpx;
+            .num {
+                width: 26rpx;
+                height: 26rpx; // vertical-align: top;
+                margin-right: 20rpx;
+                margin-top: 10rpx;
+            }
+            text {
+                width: 459rpx;
+                font-size: 26rpx;
+                color: #888;
+                line-height: 44rpx;
+            }
+        }
+    }
+    .btn {
+        display: block;
+        width: 200rpx;
+        height: 68rpx;
+        margin: 20rpx auto;
+        border-radius: 4rpx;
+        font-size: 30rpx;
+        line-height: 68rpx;
+        text-align: center;
+        color: #fff;
+        background-color: #FF7C72;
+    }
+    button::after {
+        border: none;
+    }
+}
+
+
+// 导入订单弹窗
+.beforLead {
+    width: 560rpx;
+    padding: 60rpx 60rpx 40rpx 60rpx;
+    box-sizing: border-box;
+    .close {
+        width: 76rpx;
+        height: 76rpx;
+        box-sizing: border-box;
+        position: absolute;
+        right: 0;
+        top: 0;
+        image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -28rpx;
+            margin-top: -28rpx;
+            width: 56rpx;
+            height: 56rpx;
+        }
+    }
+    .title {
+        font-size: 30rpx;
+        color: #000;
+        line-height: 30rpx;
+    }
+    .input {
+        margin-top: 40rpx;
+        width: 443rpx;
+        height: 70rpx;
+        min-height: 0;
+        border-radius: 5rpx;
+        background-color: #F3F3F3;
+        font-size: 30rpx;
+        padding-left: 24rpx;
+    }
+    .warm {
+        margin-top: 15rpx;
+        text {
+            font-size: 24rpx;
+            color: #F76260;
+            line-height: 26rpx;
+        }
+        image {
+            width: 26rpx;
+            height: 26rpx;
+            margin-right: 13rpx;
+        }
+    }
+    .bottom {
+        width: 200rpx;
+        height: 70rpx;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background-color: #FF7C72;
+        font-size: 30rpx;
+        line-height: 70rpx;
+        text-align: center;
+        color: #fff;
+        margin-top: 42rpx;
+        &::after {
+            border: none;
+        }
+    }
+}
+
+// 提现弹窗
+.withdrawal {
+    width: 561rpx;
+    padding: 60rpx 60rpx 43rpx 60rpx;
+    box-sizing: border-box;
+    width: 560rpx;
+    padding: 60rpx 60rpx 40rpx 60rpx;
+    box-sizing: border-box;
+    .close {
+        width: 76rpx;
+        height: 76rpx;
+        box-sizing: border-box;
+        position: absolute;
+        right: 0;
+        top: 0;
+        image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -28rpx;
+            margin-top: -28rpx;
+            width: 56rpx;
+            height: 56rpx;
+        }
+    }
+    .title {
+        font-size: 30rpx;
+        color: #000;
+        line-height: 30rpx;
+    }
+    .input {
+        margin-top: 40rpx;
+        width: 443rpx;
+        height: 70rpx;
+        min-height: 0;
+        border-radius: 5rpx;
+        background-color: #F3F3F3;
+        font-size: 30rpx;
+        padding-left: 24rpx;
+        text-align: center;
+    }
+    .warm {
+        margin-top: 15rpx;
+        text {
+            font-size: 24rpx;
+            color: #F76260;
+            line-height: 26rpx;
+        }
+        image {
+            width: 26rpx;
+            height: 26rpx;
+            margin-right: 13rpx;
+        }
+    }
+    .bottom {
+        width: 200rpx;
+        height: 70rpx;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background-color: #FF7C72;
+        font-size: 30rpx;
+        line-height: 70rpx;
+        text-align: center;
+        color: #fff;
+        margin-top: 42rpx;
+        &::after {
+            border: none;
+        }
+    }
+}
+
+
+.ImportSuccess {
+    width: 600rpx;
+    height: 679rpx;
+}
+
+.ImportSuccess .top {
+    width: 100%;
+    height: 243rpx;
+    position: relative;
+    text-align: center;
+}
+
+.ImportSuccess .top image {
+    position: absolute;
+}
+
+.ImportSuccess .top image:nth-of-type(1) {
+    width: 30rpx;
+    height: 30rpx;
+    top: 20rpx;
+    left: 20rpx;
+    z-index: 2;
+}
+
+.ImportSuccess .top image:nth-of-type(2) {
+    width: 100rpx;
+    height: 100rpx;
+    top: 33rpx;
+    left: 50%;
+    margin-left: -50rpx;
+    z-index: 3;
+}
+
+.ImportSuccess .top image:nth-of-type(3) {
+    width: 100%;
+    height: 243rpx;
+    top: 0;
+    left: 0
+}
+
+.ImportSuccess .top text {
+    position: relative;
+    z-index: 3;
+    font-size: 32rpx;
+    color: #ffffff;
+    line-height: 120rpx;
+}
+
+.ImportSuccess .top text {
+    line-height: 345rpx;
+}
+
+.ImportSuccess .middle {
+    height: 125rpx;
+    margin-top: 78rpx;
+}
+
+.ImportSuccess .middle .warm {
+    height: 67rpx;
+    text-align: center;
+    line-height: 67rpx;
+    vertical-align: middle;
+}
+
+.ImportSuccess .middle .warm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ImportSuccess .middle .warm image {
+    width: 25rpx;
+    height: 25rpx;
+    margin-right: 12rpx;
+    margin-bottom: -1rpx;
+}
+
+.ImportSuccess .middle .warm text:nth-of-type(1),
+.ImportSuccess .middle .warm text:nth-of-type(2) {
+    font-size: 26rpx;
+    line-height: 44rpx;
+}
+
+.ImportSuccess .middle .warm text:nth-of-type(3) {
+    font-size: 20rpx;
+    line-height: 20rpx;
+    margin-top: 15rpx;
+    color: #999;
+}
+
+.ImportSuccess .bottom {
+    margin-top: 58rpx;
+    width: 460rpx;
+    height: 90rpx;
+    background-color: #FF756A;
+    color: #ffffff;
+    font-size: 30rpx;
+    text-align: center;
+    line-height: 90rpx;
+}
+
+.ImportSuccess .bottom::after {
+    border: none;
+}
+
+.orderConfirmation {
+    width: 600rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+}
+
+.orderConfirmation .top {
+    margin-top: 50rpx;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 32rpx;
+    color: #333;
+}
+
+.orderConfirmation .content {
+    margin-top: 30rpx;
+    font-size: 26rpx;
+    color: #999;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.orderConfirmation .btn {
+    margin-top: 50rpx;
+    width: 100%;
+    height: 90rpx;
+    background-color: #fff;
+    border-radius: 0 0 10rpx 10rpx;
+    text-align: center;
+    line-height: 90rpx;
+    font-size: 30rpx;
+    color: #ff756a;
+    border-top: 1rpx solid #999;
+    display: flex;
+    flex-direction: row;
+}
+
+.orderConfirmation .btn view {
+    width: 50%;
+}
+
+.orderConfirmation .btn view:first-of-type {
+    border-right: 1rpx solid #999;
+    box-sizing: border-box;
+    color: #333;
+}
+
+.orderConfirmation.btn view::after {
+    border: none;
+}
+
+.section {
+    .myWallet {
+        width: 100%; // height: 487rpx;
+        position: relative; // overflow: hidden;
+        .accumulativeMoney {
+            width: 100%; // height: 100%;
+            background-image: linear-gradient(to right, #ff5a4e, #fb7e57);
+            .malfunction {
+                width: 100%;
+                height: 80rpx;
+                background-color: #FFF4EC;
+                image {
+                    width: 44rpx;
+                    height: 44rpx;
+                    margin-left: 24rpx;
+                    margin-right: 8rpx;
+                }
+                .scrollText {
+                    width: 477rpx;
+                    .marquee_box {
+                        width: 100%;
+                        position: relative;
+                        .marquee_text {
+                            white-space: nowrap;
+                            position: relative;
+                            text {
+                                font-size: 23rpx;
+                                color: #ac2000;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                -o-text-overflow: ellipsis;
+                                line-height: 80rpx;
+                            }
+                        }
+                    }
+                }
+                button {
+                    width: 136rpx;
+                    height: 44rpx;
+                    border-radius: 30rpx;
+                    border: 2rpx solid #ac2000;
+                    font-size: 20rpx;
+                    color: #ac2000;
+                    text-align: center;
+                    line-height: 44rpx;
+                    padding: 0;
+                    margin-left: 32rpx;
+                    margin-right: 28rpx;
+                    background-color: #FFF4EC;
+                    box-sizing: content-box;
+                }
+                button::after {
+                    border: none;
+                }
+            }
+            .notice {
+                display: block;
+                padding: 0 32rpx;
+                width: 100%;
+                height: 72rpx;
+                line-height: 72rpx;
+                color: #ffffff;
+                text-align: right;
+                font-size: 32rpx;
+                box-sizing: border-box;
+            }
+            .content {
+                height: 336rpx;
+                >view {
+                    &:first-of-type {
+                        margin-top: 32rpx;
+                        font-size: 26rpx;
+                        color: #FFF;
+                        line-height: 26rpx;
+                    }
+                    &:last-of-type {
+                        margin-top: 40rpx;
+                        line-height: 92rpx;
+                        font-size: 92rpx;
+                        color: #FFF;
+                        font-weight: 600;
+                    }
+                }
+                button {
+                    margin-top: 48rpx;
+                    width: 200rpx;
+                    height: 68rpx;
+                    border-radius: 34rpx;
+                    background-color: #FFF;
+                    font-size: 28rpx;
+                    color: #FF5548;
+                    text-align: center;
+                    line-height: 68rpx;
+                }
+                button::after {
+                    border: none;
+                }
+            }
+            .redPacket {
+                width: 100%;
+                height: 148rpx;
+                position: relative;
+                .path {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #FFF;
+                    opacity: .1;
+                }
+                .cont {
+                    width: 100%;
+                    height: 100%;
+                    padding: 0 50rpx;
+                    box-sizing: border-box;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    .RebatePage,
+                    .ActivityPage,
+                    .WithdrawalHistory {
+                        >text {
+                            &:first-of-type {
+                                font-size: 26rpx;
+                                line-height: 26rpx;
+                                color: #FFF;
+                            }
+                            &:last-of-type {
+                                margin-top: 20rpx;
+                                line-height: 32rpx;
+                                font-size: 32rpx;
+                                color: #FFF;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                    .line {
+                        width: 2rpx;
+                        height: 52rpx;
+                        background-color: #FF9C8E
+                    }
+                }
+            }
+        }
+    }
+    .uploadOrder {
+        width: 100%;
+        height: 124rpx;
+        background-color: #FFF;
+        text {
+            margin-left: 28rpx;
+            font-size: 32rpx;
+            color: #333;
+        }
+        button {
+            width: 128rpx;
+            height: 72rpx;
+            margin: 0;
+            padding: 0;
+            margin-right: 28rpx;
+            font-size: 26rpx;
+            color: #FFF;
+            text-align: center;
+            line-height: 72rpx;
+            border-radius: 40rpx;
+            background: linear-gradient(to right, #ff5a4e, #fb7e57);
+            box-shadow: 3rpx 4rpx 10rpx #fb7e57;
+        }
+        button::after {
+            border: none;
+        }
+    }
+}
+
+// flex兼容写法
+// 定义布局为盒模型
+.flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+// 盒模型垂直布局
+.flex-v {
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.flex-r {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+// 子元素占据剩余的空间
+.flex-1 {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+// 子元素垂直居中
+.flex-align-center {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+// 子元素水平居中
+.flex-pack-center {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+// 子元素两端对齐
+.flex-pack-justify {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}

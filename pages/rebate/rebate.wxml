@@ -1,0 +1,293 @@
+<!--pages/rebate/rebate.wxml-->
+<view class="section">
+  <view class='myWallet'>
+    <view class="accumulativeMoney">
+      <view wx:if="{{status.weixinerror}}" class="malfunction flex flex-r flex-align-center flex-pack-justify">
+        <image src="../../images/wallet01/wallet_info.png" alt=""></image>
+        <scroll-view class="scrollText">
+          <view class="marquee_box">
+            <view class="marquee_text" style="{{orientation}}:{{marqueeDistance2}}rpx;font-size: {{size}}rpx;">
+              <text>{{xScrollText}}</text>
+              <text wx:if="{{marquee2copyStatus}}" style="margin-left:{{marquee2Margin}}rpx;margin-right:0">{{xScrollText}}</text>
+            </view>
+          </view>
+        </scroll-view>
+        <button catchtap="addRobot">添加新好友</button>
+      </view>
+      <text class='notice' catchtap='clickNotice'>提现须知</text>
+      <view class="content flex flex-v flex-align-center">
+        <view>待提现金额(元)</view>
+        <view>{{userInfo.user_cashed_money}}</view>
+        <button catchtap='{{status.showWithdrawalBox}}' class='withdrawals {{status.withdrawalClass}}'>{{status.withdrawalstatus}}</button>
+      </view>
+      <view class='redPacket'>
+        <view class="path"></view>
+        <div class="cont flex flex-r flex-align-center flex-pack-justify">
+          <view class='RebatePage flex flex-v flex-align-center' catchtap='_entryRebatePage'>
+            <text>返利红包(元)</text>
+            <text>{{userInfo.user_grandtotal}}</text>
+          </view>
+          <view class='line'></view>
+          <view class='ActivityPage flex flex-v flex-align-center' catchtap='_entryActivityPage'>
+            <text>活动红包(元)</text>
+            <text>{{userInfo.party_money_sum}}</text>
+          </view>
+          <view class='line'></view>
+          <view class='WithdrawalHistory flex flex-v flex-align-center' catchtap='_entryWithdrawalHistory'>
+            <text>提现历史(元)</text>
+            <text>{{userInfo.has_cash_money}}</text>
+          </view>
+        </div>
+      </view>
+    </view>
+  </view>
+  <view class='uploadOrder flex flex-r flex-align-center flex-pack-justify' data-type="second">
+    <text>返利订单</text>
+    <button catchtap='showOrderBox'>导入</button>
+  </view>
+  <view class='course'>如何获得红包？提现有问题？
+    <text catchtap='_entryTutorial'>联系客服</text>
+  </view>
+
+  <easy-modal id="easyModal" title="这个是标题 01" bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEventFirst">
+    <view class='modal-content'>
+      <!-- 初次进入弹窗 -->
+      <view wx:if="{{Modal.firstEntry}}" class='firstEntry flex flex-v flex-align-center'>
+        <view class="close">
+          <image catchtap="_confirmEventFirst" src='../../images/wallet01/{{closeIng}}'></image>
+        </view>
+        <text>恭喜你可以提现了！</text>
+        <view class='middle'>
+          <view class="row flex flex-r" catchtap='copyCode' data-code="{{userInfo.weixinnamber}}">
+            <image class="num" src='../../images/wallet01/pop_up_no_1.png'></image>
+            <text>初次提现，点击复制微信
+              <text style='color:#5F97FF'>【{{userInfo.weixinnamber}}】</text>，添加
+              <text style='color:#5F97FF'>【{{userInfo.weixinname}}】</text>为好友</text>
+          </view>
+          <view class="row flex flex-r">
+            <image class="num" src='../../images/wallet01/pop_up_no_2.png'></image>
+            <text>加好友完成身份验证，就能收到红包</text>
+          </view>
+          <view class="row flex flex-r">
+            <image class="num" src='../../images/wallet01/pop_up_no_3.png'></image>
+            <text>以后再次提现，只需点击提现按钮，就能收到提现红包啦~</text>
+          </view>
+          <view class="row flex flex-r">
+            <image class="num" src='../../images/wallet01/pop_up_no_4.png'></image>
+            <text>如您已添加此微信号，直接发送【提现】给Ta，就能验证身份并提现了</text>
+          </view>
+        </view>
+        <button class='btn' catchtap="_confirmEventFirst">知道了</button>
+      </view>
+      <!-- 导入订单弹窗 -->
+      <view wx:if="{{Modal.beforLead}}" class='beforLead flex flex-v flex-align-center'>
+        <view class="close">
+          <image catchtap="_confirmEventFirst" src='../../images/wallet01/{{closeIng}}'></image>
+        </view>
+        <text class="title">主人，请输入订单号</text>
+        <input class='input' bindinput='ordervalInput' value='{{ordervalInput}}' placeholder='去淘宝复制订单号，粘贴即可'></input>
+        <view class='warm flex flex-r flex-align-center' wx:if="{{status.uploadOrderText != ''}}">
+          <image src='../../images/wallet01/warm.png'></image>
+          <text>{{status.uploadOrderText}}</text>
+        </view>
+        <button class='bottom {{status.uploadOrderClass}}' data-type='ordervalInput' catchtap='{{status.uploadOrder}}'>导入订单</button>
+      </view>
+      <!-- 提现弹窗 -->
+      <view wx:if="{{Modal.withdrawal}}" class='withdrawal flex flex-v flex-align-center'>
+        <view class="close">
+          <image catchtap="_confirmEventFirst" src='../../images/wallet01/{{closeIng}}'></image>
+        </view>
+        <text class="title">请主人输入提现金额</text>
+        <input class='input' bindinput='moneyvalInput' value='{{moneyvalInput}}' placeholder='待提现{{userInfo.user_cashed_money}}元'></input>
+        <view class='warm flex flex-r flex-align-center' wx:if="{{status.confirmWithdrawalText != ''}}">
+          <image src='../../images/wallet01/warm.png'></image>
+          <text>{{status.confirmWithdrawalText}}</text>
+        </view>
+        <button class='bottom {{status.confirmWithdrawalClass}}' catchtap='{{status.confirmWithdrawal}}'>确认提现</button>
+      </view>
+      <!-- 提示绑定机器人弹窗 -->
+      <view wx:if="{{Modal.bindweixinis}}" class='bindweixinis flex flex-v flex-align-center'>
+        <view class="close">
+          <image catchtap="_confirmEventFirst" src='../../images/wallet01/{{closeIng}}'></image>
+        </view>
+        <text>恭喜你可以提现了！</text>
+        <view class='middle'>
+          <view class="row flex flex-r" catchtap='copyCode' data-code="{{userInfo.weixinnamber}}">
+            <image class="num" src='../../images/wallet01/pop_up_no_1.png'></image>
+            <text>初次提现，点击复制微信
+              <text style='color:#5F97FF'>【{{userInfo.weixinnamber}}】</text>，添加
+              <text style='color:#5F97FF'>【{{userInfo.weixinname}}】</text>为好友</text>
+          </view>
+          <view class="row flex flex-r">
+            <image class="num" src='../../images/wallet01/pop_up_no_2.png'></image>
+            <text>完成身份验证，就能收到提现红包。</text>
+          </view>
+          <view class="row flex flex-r">
+            <image class="num" src='../../images/wallet01/pop_up_no_3.png'></image>
+            <text>以后再次提现，只需点击提现按钮</text>
+          </view>
+        </view>
+        <button class='btn' catchtap="_confirmEventFirst">知道了</button>
+      </view>
+
+
+      <view wx:if="{{Modal.ImportSuccess_01}}" class='ImportSuccess'>
+        <view class='top'>
+          <text>导入订单成功！</text>
+          <image catchtap="_confirmEventFirst" src='../../images/wallet01/close_01.png'></image>
+          <image class='succeed' src='../../images/wallet01/succeed .png'></image>
+          <image src='../../images/wallet01/07.png'></image>
+        </view>
+        <view class='middle'>
+          <view class='warm'>
+            <text>主人，发送"提现+订单号"给{{userInfo.weixinnamber}},</text>
+            <text>{{userInfo.weixinnamber}}会为主人自动导入订单号</text>
+            <text>如：提现1123456451</text>
+          </view>
+        </view>
+        <button class='bottom' catchtap='_entryRebatePage'>立即查看</button>
+      </view>
+      <view wx:if="{{Modal.ImportSuccess_02}}" class='ImportSuccess'>
+        <view class='top'>
+          <text>提现成功，主人请查收！</text>
+          <image catchtap="_confirmEventFirst" src='../../images/wallet01/close_01.png'></image>
+          <image class='succeed' src='../../images/wallet01/succeed .png'></image>
+          <image src='../../images/wallet01/07.png'></image>
+        </view>
+        <view class='middle'>
+          <view class='warm'>
+            <text>主人，发送"提现"或"我的红包"给{{userInfo.weixinnamber}},</text>
+            <text>就能进入钱包查看并提现</text>
+          </view>
+        </view>
+        <button class='bottom' catchtap='_confirmEventFirst'>知道了</button>
+      </view>
+      <view wx:if="{{Modal.orderConfirmation}}" class='orderConfirmation'>
+        <view class='top'>导入订单</view>
+        <view class='content'>
+          <text>主人，您是要导入下面这个订单吗？</text>
+          <text>订单号：{{userClipboardData}}~</text>
+        </view>
+        <!-- <view wx:if="{{status.orderConfirmationText != ''}}" class='warm'>
+              <image src='../../images/wallet01/warm.png'></image>
+              <text>{{status.orderConfirmationText}}</text>
+            </view> -->
+        <view class='btn'>
+          <view catchtap='_confirmEventFirst'>取消</view>
+          <view catchtap="uploadOrder" data-type='userClipboardData'>是的</view>
+        </view>
+      </view>
+
+
+      <!-- 机器人故障弹窗 -->
+      <view wx:if="{{Modal.robotDown}}" class=' robotDown flex flex-v flex-align-center'>
+        <!-- <image class="close" catchtap="_confirmEventFirst" src='../../images/wallet01/{{closeIng}}'></image> -->
+        <view class="close" catchtap="_confirmEventFirst" data-msg="robotError">
+          <image src='../../images/wallet01/{{closeIng}}'></image>
+        </view>
+        <text>发红包的小伙伴失联了……</text>
+        <view class='middle'>
+          <view class="row flex flex-r" catchtap='copyCode' data-code="{{userInfo.weixinnamber}}">
+            <image class="num" src='../../images/wallet01/pop_up_no_1.png'></image>
+            <text>点击复制微信号
+              <text style='color:#5F97FF'>【{{userInfo.weixinnamber}}】</text>，添加新好友
+              <text style='color:#5F97FF'>【{{userInfo.weixinname}}】</text>
+            </text>
+          </view>
+          <view class="row flex flex-r">
+            <image class="num" src='../../images/wallet01/pop_up_no_2.png'></image>
+            <text>发送【提现】给Ta，重新验证手机号，就能继续提现了</text>
+          </view>
+        </view>
+        <button class='btn' catchtap="_confirmEventFirst" data-msg="robotError">知道了</button>
+      </view>
+
+      <!-- 提现失败弹窗 -->
+      <view wx:if="{{Modal.withdrawalFail}}" class='withdrawalFail flex flex-v flex-align-center'>
+        <!-- <image class="close" catchtap="_confirmEventFirst" src='../../images/wallet01/{{closeIng}}'></image> -->
+        <view class="close" catchtap="_confirmEventFirst" data-msg="withdrawalError">
+          <image src='../../images/wallet01/{{closeIng}}'></image>
+        </view>
+        <text>提现没成功啊……</text>
+        <view class='middle'>
+          <view class="row flex flex-r">
+            <image class="num" src='../../images/wallet01/pop_up_no_1.png'></image>
+            <text>发红包的小伙伴离家出走了</text>
+          </view>
+          <view class="row flex flex-r" catchtap='copyCode' data-code="{{userInfo.weixinnamber}}">
+            <image class="num" src='../../images/wallet01/pop_up_no_2.png'></image>
+            <text>点击复制微信号
+              <text style='color:#5F97FF'>【{{userInfo.weixinnamber}}】</text>，添加新好友
+              <text style='color:#5F97FF'>【{{userInfo.weixinname}}】</text>
+            </text>
+          </view>
+          <view class="row flex flex-r">
+            <image class="num" src='../../images/wallet01/pop_up_no_3.png'></image>
+            <text>发送【提现】给Ta，重新验证手机号，就能继续提现了</text>
+          </view>
+          <view class="row flex flex-r">
+            <image class="num" src='../../images/wallet01/pop_up_no_4.png'></image>
+            <text>未提现成功的金额，已退回账户</text>
+          </view>
+        </view>
+        <button class='btn' catchtap="_confirmEventFirst" data-msg="withdrawalError">知道了</button>
+      </view>
+
+      <!-- 添加新好友弹窗 -->
+      <view wx:if="{{Modal.addRobot}}" class=' addRobot flex flex-v flex-align-center'>
+        <!-- <image class="close" catchtap="_confirmEventFirst" src='../../images/wallet01/{{closeIng}}'></image> -->
+        <view class="close" catchtap="_confirmEventFirst">
+          <image src='../../images/wallet01/{{closeIng}}'></image>
+        </view>
+        <text>发红包的小伙伴失联了……</text>
+        <view class='middle'>
+          <view class="row flex flex-r" catchtap='copyCode' data-code="{{userInfo.weixinnamber}}">
+            <image class="num" src='../../images/wallet01/pop_up_no_1.png'></image>
+            <text>点击复制微信号
+              <text style='color:#5F97FF'>【{{userInfo.weixinnamber}}】</text>，添加新好友
+              <text style='color:#5F97FF'>【{{userInfo.weixinname}}】</text>
+            </text>
+          </view>
+          <view class="row flex flex-r">
+            <image class="num" src='../../images/wallet01/pop_up_no_2.png'></image>
+            <text>发送【提现】给Ta，重新验证手机号，就能继续提现了</text>
+          </view>
+        </view>
+        <button class='btn' catchtap="_confirmEventFirst">知道了</button>
+      </view>
+
+      <!-- 提现须知 -->
+      <view wx:if="{{Modal.noticePopup}}" class='noticePopup flex flex-v flex-align-center'>
+        <view class="close">
+          <image catchtap="_confirmEventFirst" src='../../images/wallet01/{{closeIng}}'></image>
+        </view>
+        <text>提现须知</text>
+        <view class='middle'>
+          <view class="row flex flex-r">
+            <image class="num" src='../../images/wallet01/pop_up_no_1.png'></image>
+            <text>前三次提现，随时可提，单次最高提现¥20，每天可提一次；</text>
+          </view>
+          <view class="row flex flex-r">
+            <image class="num" src='../../images/wallet01/pop_up_no_2.png'></image>
+            <text>从第四次开始，单次最低提现¥10、最高提现¥20，每天可提一次。</text>
+          </view>
+        </view>
+        <button class='btn' catchtap="_confirmEventFirst">知道了</button>
+      </view>
+      
+      <!-- 红包过期 -->
+      <view wx:if="{{Modal.repackPastDue}}" class='repackPastDue flex flex-v flex-align-center'>
+          <view class="close">
+            <image catchtap="_confirmEventFirst" src='../../images/wallet01/{{closeIng}}'></image>
+          </view>
+          <text>提现没成功啊……</text>
+          <view class='middle'>
+            <view class="row flex flex-r">
+              <text>您未在24小时内领取红包未提现成功的金额，已退回账户</text>
+            </view>
+          </view>
+          <button class='btn' catchtap="_confirmEventFirst">知道了</button>
+        </view>
+    </view>
+  </easy-modal>
+</view>

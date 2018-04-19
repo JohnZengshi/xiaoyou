@@ -1,0 +1,158 @@
+/* pages/rebatePage/rebatePacket.wxss */
+page,
+.section {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f6;
+}
+/* 红包列表 */
+.section .top {
+  height: 184rpx;
+  box-sizing: border-box;
+  padding: 0 100rpx;
+  background-image: linear-gradient(to right, #ff5a4e, #fb7e57);
+}
+.section .top .withdrawDeposit,
+.section .top .accumulatedIncome {
+  height: 100%;
+  text-align: center;
+}
+.section .top .withdrawDeposit > text:first-of-type,
+.section .top .accumulatedIncome > text:first-of-type {
+  font-size: 26rpx;
+  color: #FFF;
+  margin-top: 32rpx;
+  line-height: 26rpx;
+}
+.section .top .withdrawDeposit > text:last-of-type,
+.section .top .accumulatedIncome > text:last-of-type {
+  font-size: 60rpx;
+  line-height: 60rpx;
+  color: #FFF;
+  margin-top: 20rpx;
+  font-weight: 600;
+}
+.section .top .line {
+  width: 2rpx;
+  height: 52rpx;
+  background-color: #FFF;
+  opacity: .5;
+  margin-top: 80rpx;
+}
+.section .packetList {
+  background-color: #ffffff;
+}
+.section .packetList .tab {
+  height: 72rpx;
+  margin: 0 32rpx;
+}
+.section .packetList .tab > view {
+  color: #888;
+  font-size: 28rpx;
+  line-height: 72rpx;
+  height: 100%;
+}
+.section .packetList .tab > view.active {
+  color: #FF5548;
+  position: relative;
+}
+.section .packetList .tab > view.active::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 5rpx;
+  bottom: 0rpx;
+  background-color: #FF5548;
+}
+.section .packetList .tip {
+  background-color: #F7F7F7;
+  padding: 14rpx 28rpx;
+  font-size: 24rpx;
+  color: #888;
+  line-height: 36rpx;
+  box-sizing: border-box;
+}
+.section .packetList .packet {
+  width: 100%;
+  border-bottom: 1rpx solid #f5f5f6;
+  padding: 32rpx 28rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.section .packetList .packet .orderid {
+  font-size: 26rpx;
+  color: #333;
+  line-height: 26rpx;
+}
+.section .packetList .packet .title {
+  width: 438rpx;
+  font-size: 26rpx;
+  line-height: 26rpx;
+  color: #333;
+  margin-top: 12rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.section .packetList .packet .from {
+  font-size: 24rpx;
+  color: #A5A5A5;
+  line-height: 24rpx;
+  margin-top: 24rpx;
+}
+.section .packetList .packet .ctime {
+  font-size: 24rpx;
+  color: #A5A5A5;
+  margin-top: 12rpx;
+  line-height: 24rpx;
+}
+.section .packetList .packet .money {
+  position: absolute;
+  right: 28rpx;
+  top: 32rpx;
+  font-size: 36rpx;
+  line-height: 36rpx;
+  color: #333;
+}
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flex-v {
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.flex-r {
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.flex-1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.flex-align-center {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.flex-pack-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.flex-pack-justify {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
